@@ -1,0 +1,334 @@
+<html>
+<head>
+	<title>BBS论坛</title>
+	<include file="./Public/common/header.html"/>
+	<style>
+		/*.btn-default{
+			width:100px;
+			height:50px
+		}
+		
+		.carousel{
+			width:300px;
+			height:50px
+		}*/
+		.featurette{
+
+			height:300px
+		}
+		.navbar-fixed-bottom{
+			height:20px;
+			background-color:red
+		}
+	</style>
+
+</head>
+<body>
+	<!-- 分頁http://1.thinkphptest.applinzi.com/index.php -->
+	<!-- <?php dump($list) ;?> -->
+<!-- 	{$list}
+	<table>  
+	<volist name="list" id="vo">
+	    <tr>
+		<td>
+		{$vo.post_title}
+		</td>
+		</tr>
+	</volist>
+	</table>
+	<div class="pagelist">{$page}</div> -->
+<?php "hello lan world" ;?> 
+	<!-- 内容 -->
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4">
+				<div id="myCarousel" class="carousel slide">
+					<!-- 轮播（Carousel）指标 -->
+					<ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1"></li>
+						<li data-target="#myCarousel" data-slide-to="2"></li>
+						<li data-target="#myCarousel" data-slide-to="3"></li>
+						<li data-target="#myCarousel" data-slide-to="4"></li>
+						<li data-target="#myCarousel" data-slide-to="5"></li>
+						<li data-target="#myCarousel" data-slide-to="6"></li>
+						<!-- <li data-target="#myCarousel" data-slide-to="2"></li> -->
+					</ol>
+					<!-- 轮播（Carousel）项目 -->
+					<div class="carousel-inner">
+						<div class="item active">
+							<img src="__PUBLIC__/image/1.jpg" alt="First slide" style="height:400px"  class="first-slide">
+							<div class="carousel-caption"><strong> </strong> </div>
+						</div>
+						<div class="item">
+							<img src="__PUBLIC__/image/2.jpg" alt="Second slide" style="height:400px"  class="first-slide">
+							<div class="carousel-caption"><strong> </strong></div>
+						</div>
+						<div class="item">
+							<img src="__PUBLIC__/image/6.jpg" alt="3 slide" style="height:400px"  class="first-slide">
+							<div class="carousel-caption"><strong> </strong></div>
+						</div>
+						<div class="item">
+							<img src="__PUBLIC__/image/7.jpg" alt="4 slide" style="height:400px"  class="first-slide">
+							<div class="carousel-caption"><strong> </strong></div>
+						</div>
+						<div class="item">
+							<img src="__PUBLIC__/image/8.jpg" alt="5 slide" style="height:400px"  class="first-slide">
+							<div class="carousel-caption"><strong> </strong></div>
+						</div>
+						<div class="item">
+							<img src="__PUBLIC__/image/9.jpg" alt="6 slide" style="height:400px"  class="first-slide">
+							<div class="carousel-caption"><strong> </strong></div>
+						</div>
+
+				</div>
+				<!-- 轮播（Carousel）导航 -->
+				<a class="carousel-control left" href="#myCarousel"
+				data-slide="prev">&lsaquo;</a>
+				<a class="carousel-control right" href="#myCarousel"
+				data-slide="next">&rsaquo;</a>
+			</div>
+		</div>
+		<div class="col-sm-8">
+			<div class="row">
+				<div class="col-xs-8">
+					<ul id="myTab" class="nav nav-tabs">
+						<li class="active">
+							<a href="#home" data-toggle="tab">W3Cschool Home</a>
+						</li>
+						<li>
+							<a href="#new" data-toggle="tab">iOS</a>
+						</li>
+						<li class="dropdown">
+							<a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown">
+								Java <b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+								<li>
+									<a href="#good" tabindex="-1" data-toggle="tab">jmeter</a>
+								</li>
+								<li>
+									<a href="#ejb" tabindex="-1" data-toggle="tab">ejb</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<div id="myTabContent" class="tab-content">
+						<div class="tab-pane fade in active" id="home">
+							<p>
+								<ul>
+									<li>1</li>
+									<li>2</li>
+									<li>3</li>
+									<li>4</li>
+								</ul>
+							</p>
+						</div>
+						<div class="tab-pane fade" id="new">
+							<ul>
+								<li>1</li>
+								<li>2</li>
+								<li>3</li>
+								<li>4</li>
+							</ul>
+						</div>
+						<div class="tab-pane fade" id="good">
+							<p>jMeter 是一款开源的测试软件。它是 100% 纯 Java 应用程序，用于负载和性能测试。</p>
+						</div>
+						<div class="tab-pane fade" id="ejb">
+							<p>
+								Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
+							</p>
+						</div>
+					</div>
+				</div>
+<!-- 				<div class="col-sm-4 ">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Panel title1</h3>
+						</div>
+						<div class="panel-body">
+							<a href="#">Panel content</a>
+						</div>
+						<div class="panel-body">
+							<a href="#">Panel content</a>
+						</div>
+						<div class="panel-body">
+							<a href="#">Panel content</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Panel title2</h3>
+						</div>
+						<div class="panel-body">
+							Panel content
+						</div>
+						<div class="panel-body">
+							Panel content
+						</div>
+						<div class="panel-body">
+							Panel content
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Panel title3</h3>
+						</div>
+						<div class="panel-body">
+							Panel content
+						</div>
+						<div class="panel-body">
+							Panel content
+						</div>
+						<div class="panel-body">
+							Panel content
+						</div>
+					</div>
+				</div>
+			</div> -->
+<!-- 			<div class="row">
+				<div class="col-sm-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Panel title4</h3>
+						</div>
+						<div class="panel-body">
+							Panel content
+						</div>
+						<div class="panel-body">
+							Panel content
+						</div>
+						<div class="panel-body">
+							Panel content
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Panel title5</h3>
+						</div>
+						<div class="panel-body">
+							Panel content
+						</div>
+						<div class="panel-body">
+							Panel content
+						</div>
+						<div class="panel-body">
+							Panel content
+						</div>
+					</div>
+				</div>
+			</div> -->
+
+		</div>
+
+		<!-- 版块内的主题 -->
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="list-group">
+					<a href="#" class="list-group-item active">
+						<h4 class="list-group-item-heading">
+							版块名
+						</h4>
+					</a>
+					<a href="#" class="list-group-item">
+						<h4 class="list-group-item-heading">
+							主题1
+						</h4>
+						<p class="list-group-item-text">
+							您将通过网页进行免费域名注册。
+						</p>
+					</a>
+					<a href="#" class="list-group-item">
+						<h4 class="list-group-item-heading">
+							主题2
+						</h4>
+						<p class="list-group-item-text">
+							我们提供 24*7 支持。
+						</p>
+					</a>
+				</div>
+			</div>
+
+		</div>
+		<div class="row">
+  <!-- <div class="col-sm-12">
+</div> -->
+
+<!-- 版块内容 -->
+<hr class="featurette-divider">
+
+<div class="row featurette">
+	<div class="col-md-7">
+		<h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
+		<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+	</div>
+	<div class="col-md-5">
+		<img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" src="__PUBLIC__/image/3.jpg" >
+	</div>
+</div>
+</div>
+<div class="row">
+	<hr class="featurette-divider">
+
+	<div class="row featurette">
+		<div class="col-md-7 col-md-push-5">
+			<h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
+			<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+		</div>
+		<div class="col-md-5 col-md-pull-7">
+		<!-- style="width:480px;height:300px" -->
+			<img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" src="__PUBLIC__/image/4.jpg" >
+		</div>
+	</div>
+	<hr class="featurette-divider">
+
+</div>
+<div class="row">
+  <!-- <div class="col-sm-12">
+</div> -->
+
+<!-- 版块内容 -->
+
+
+<div class="row featurette">
+	<div class="col-md-7">
+		<h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
+		<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+	</div>
+	<div class="col-md-5">
+		<img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" src="__PUBLIC__/image/5.jpg" >
+	</div>
+</div>
+<hr class="featurette-divider">
+</div>
+<div class="row">
+	<div class="col-sm-12">
+	</div>
+	<!-- FOOTER -->
+	<footer>
+		<p class="pull-right"><a href="#">Back to top</a></p>
+		<p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+	</footer>
+	<footer>
+		<p class="pull-right"><a href="#">Back to top</a></p>
+		<p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+	</footer>
+</div>
+</div>
+
+<!-- 底部导航栏 -->
+<!-- <nav class="navbar navbar-default navbar-fixed-bottom">
+	<div class="container">
+		<li><a href="#">Dropdown link</a></li>
+		<li><a href="#">Dropdown link</a></li>
+	</div>
+</nav> -->
+</body>
+</html>
