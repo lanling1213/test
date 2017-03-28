@@ -1,0 +1,472 @@
+{template "content","header"}
+{if in_array($catid,array(1))}
+<div class="banner">
+    <div class="ban_hd">
+        <h3>专业团队</h3>
+        <em>PROFESSIONAL TEAM</em>
+        <div class="line"></div>
+    </div>
+
+</div>
+<div class="position_bg">
+    <div class="position">
+        <p><em><img src="{IMG_PATH}wycms/posi.jpg" /></em>您现在的位置：<a href="/">首页 </a>>{catpos($catid)}</p>
+    </div>
+</div>
+
+<div class="ab_list">
+    <ul class="cl">
+        <li><a href="/"><img src="{IMG_PATH}wycms/home.jpg" /><p>首页</p></a></li>
+        <li><a target="_blank" href="{$CATEGORYS[8][url]}"><img src="{IMG_PATH}wycms/shouxi_img.jpg" /><p>首席律师</p></a></li>
+        <li><a href="#mao_jyls"><img src="{IMG_PATH}wycms/team_img.jpg"/><p>精英团队</p></a></li>
+        <li><a target="_blank" href="{$CATEGORYS[10][url]}"><img src="{IMG_PATH}wycms/profile_img.jpg" /><p>律所介绍</p></a></li>
+    </ul>
+</div>
+
+
+<div class="team">
+    <div class="read_t cl">
+
+        <div class="ab_tit cl ">
+            <h3 id="mao_sxls" class="fl">首席律师</h3><em class="fl">CHIEF COUNSEL</em>
+        </div>
+
+    </div>
+
+    <div class="team_t cl">
+        <img  class="fl"src="{$CATEGORYS[8][image]}" />
+        <p class="fr">【基本情况】<br />
+            {wy:get sql="select * from wy_page where catid=8" return="datas"}
+            {loop $datas $r}
+            {str_cut(strip_tags($r[content]),'1200','...')}
+            <a href="{$CATEGORYS[8][url]}" target="_blank">【更多详情】</a><br /></p>
+        {/loop}
+        {/wy}
+    </div>
+
+
+    <div class="read_t cl">
+
+        <div class="ab_tit cl ">
+            <h3 id="mao_jyls" class="fl">精英团队</h3><em class="fl">LAWYERS</em>
+        </div>
+
+    </div>
+
+    <div class="team_b">
+        <ul class="cl">
+            {php $i=0;}
+            {wy:content action="lists" catid="9" num="8" order="listorder desc" return="data"}
+            {loop $data $r}
+            {php $i++;}
+            <li  class="{if $i==1 || $i==5}no{/if}"><a href="{$r['url']}" target="_blank"><img src="{if $r['thumb']}{$r['thumb']}{else}{IMG_PATH}wycms/know1.jpg{/if}" style="width: 227px;height: 256px;" /><p>{$r['title']}</p></a></li>
+            {/loop}
+            {/wy}
+        </ul>
+    </div>
+</div>
+{elseif in_array($catid,array(2))}
+<div class="banner">
+    <div class="ban_hd">
+        <h3>业务专长</h3>
+        <em>EXPERTISE</em>
+        <div class="line"></div>
+    </div>
+
+</div>
+<div class="position_bg">
+    <div class="position">
+        <p><em><img src="{IMG_PATH}wycms/posi.jpg" /></em>您现在的位置：<a href="/">首页 </a>>{catpos($catid)}</p>
+    </div>
+</div>
+
+<div class="a_bussness">
+    <div class="bus_bd cl">
+        <ul>
+            {wy:content action="category" catid="2" return="datas"}
+            {loop $datas $r}
+            <li>
+                <a href="{$r['url']}">
+                    <img src="{IMG_PATH}wycms/icon{$n}.jpg" />
+                    <p>{$r[catname]}</p>
+                </a>
+            </li>
+            {/loop}
+            {/wy}
+
+        </ul>
+    </div>
+</div>
+<div class="ab_con cl">
+    <div class="ab_cont">
+
+        <div class="ab_tit cl">
+            <h3 class="fl">{$CATEGORYS[12][catname]}</h3>
+            <em class="fl">SUPPLY CHAIN FINANCE</em>
+        </div>
+    </div>
+    <div class="bu_conb">
+        <ul>
+            {wy:content action="lists" catid="12" num="6" moreinfo="true" page="$page" order="inputtime desc" return="data"}
+            {loop $data $r}
+            <li class="{if $n==1 || $n==4}no{/if}">
+                <img src="{if $r['thumb']}{$r['thumb']}{else}{IMG_PATH}wycms/know1.jpg{/if}" />
+                <h3><a href="{$r['url']}" target="_blank">{str_cut(strip_tags($r['title']),'55','...')}</a></h3>
+                <p>{str_cut(strip_tags($r['description']),'120','...')}</p>
+                <div class="about_more cl">
+                    <div class="time fl cl">
+                        <img class="fl"  src="{IMG_PATH}wycms/time_icon.jpg" />
+                        <em class="fl" >{date('y-m-d',$r['inputtime'])}</em>
+                    </div>
+                    <div class="more fr">
+
+                        <a href="{$r['url']}" target="_blank">More >></a>
+                    </div>
+                </div>
+            </li>
+            {/loop}
+            {/wy}
+        </ul>
+
+        <div class="fanye">
+<!--            <a  class="link" href="#"><</a> <a class="link1" href="#">1</a>  <a href="#">2</a>   <a href="#">3</a>   <a href="#">4</a>   <a href="#">5</a>   <a class="link1" href="#">></a>
+        -->
+        {$wy_pages}
+        </div>
+    </div>
+</div>
+{elseif in_array($catid,array(3))}
+<div class="banner">
+    <div class="ban_hd">
+        <h3>债务知识</h3>
+        <em>DEBT KNOWLEDGE</em>
+        <div class="line"></div>
+    </div>
+
+</div>
+<div class="position_bg">
+    <div class="position">
+        <p><em><img src="{IMG_PATH}wycms/posi.jpg" /></em>您现在的位置：<a href="/">首页 </a>>{catpos($catid)} </p>
+    </div>
+</div>
+
+<div class="ab_list">
+    <ul class="cl">
+        <li><a href="/"><img src="{IMG_PATH}wycms/home.jpg" /><p>首页</p></a></li>
+        <li><a href="#mao_jdcs"><img src="{IMG_PATH}wycms/know_icon1.jpg" /><p>借贷常识 </p></a></li>
+        <li><a href="#mao_dxal"><img src="{IMG_PATH}wycms/know_icon2.jpg"/><p>典型案例 </p></a></li>
+        <li><a href="#mao_zzzn"><img src="{IMG_PATH}wycms/know_icon3.jpg"/><p>追债指南 </p></a></li>
+    </ul>
+</div>
+{php $b=0;}
+{wy:content action="category" catid="3" order="id asc" return="data"}
+{loop $data $v}
+{php $b++;}
+{if $b==2}<div class="new_con">{/if}
+    <div class="ab_con cl">
+        <div class="ab_cont">
+            <div class="ab_tit cl">
+
+                {if $b==1}
+                <h3 id="mao_jdcs" class="fl">{$v['catname']}</h3>
+                <em class="fl">COMMON SENSE  LENDING</em>
+                {elseif $b==2}
+                <h3 id="mao_dxal" class="fl">{$v['catname']}</h3>
+                <em class="fl">TYPICAL  CASE</em>
+                {elseif $b==3}
+                <h3 id="mao_zzzn" class="fl">{$v['catname']}</h3>
+                <em class="fl">DEBT COLLECTION  GUIDELINES</em>
+                {/if}
+            </div>
+            <span><a  href="{$v['url']}" id="more{$b}" catid="{$v[catid]}" class="nMore">更多>></a></span>
+        </div>
+
+        <div class="ab_conb">
+            <ul id="news{$b}">
+                {php $i=0;}
+                {wy:content action="lists" catid="$v[catid]" num="3" order="id desc" return="data"}
+                {loop $data $r}
+                {php $i++;}
+                <li class="{if $i==1}no{/if}">
+                    <img src="{IMG_PATH}3_{$b}_{$n}.jpg" />
+                    <h3><a href="{$r['url']}" target="_blank">{str_cut(strip_tags($r['title']),'55','...')}</a></h3>
+                    <p>{str_cut(strip_tags($r['description']),'120','...')}</p>
+                    <div class="about_more cl">
+                        <div class="time fl cl">
+                            <img class="fl"  src="{IMG_PATH}wycms/time_icon.jpg" />
+                            <em class="fl" >{date('y-m-d',$r[inputtime])}</em>
+                        </div>
+                        <div class="more fr">
+                            <a href="{$r['url']}" target="_blank">More >></a>
+                        </div>
+                    </div>
+                </li>
+                {/loop}
+                {/wy}
+            </ul>
+        </div>
+    </div>
+    {if $b==2}</div>{/if}
+{/loop}
+{/wy}
+
+{elseif in_array($catid,array(4))}
+<div class="banner">
+    <div class="ban_hd">
+        <h3>律师文集</h3>
+        <em>LEGALERS ANTHOLOGY</em>
+        <div class="line"></div>
+    </div>
+
+</div>
+<div class="position_bg">
+    <div class="position">
+        <p><em><img src="{IMG_PATH}wycms/posi.jpg" /></em>您现在的位置：<a href="/">首页 </a>>{catpos($catid)} </p>
+    </div>
+</div>
+
+<div class="ca_list">
+    <ul class="cl">
+        <li><a href="/"><img src="{IMG_PATH}wycms/home.jpg" /><p>首页</p></a></li>
+        <li><a href="#mao_flws"><img src="{IMG_PATH}wycms/book_img.jpg" /><p>法律文书</p></a></li>
+        <li><a href="#mao_xswz"><img src="{IMG_PATH}wycms/book_img1.jpg"/><p>学术文章</p></a></li>
+    </ul>
+</div>
+{php $b=0;}
+{wy:content action="category" catid="4" order="id asc" return="data"}
+{loop $data $v}
+{php $b++;}
+{if $b==1}<div class="new_con">{/if}
+    <div class="ab_con cl">
+        <div class="ab_cont">
+            <div class="ab_tit cl">
+                {if $b==1}
+                <h3 id="mao_flws" class="fl">{$v['catname']}</h3>
+                <em class="fl">LEGAL INSTRUMENTS </em>
+                {elseif $b==2}
+                <h3 id="mao_xswz" class="fl">{$v['catname']}</h3>
+                <em class="fl">ACADEMIC JOURNAL</em>
+                {/if}
+            </div>
+            <span><a  href="{$v['url']}" id="more{$b}" catid="{$v[catid]}" class="nMore">更多>></a></span>
+        </div>
+
+        <div class="ab_conb">
+            <ul id="news{$b}">
+                {php $i=0;}
+                {wy:content action="lists" catid="$v[catid]" num="3" order="id desc" return="data"}
+                {loop $data $r}
+                {php $i++;}
+                <li class="{if $i==1}no{/if}">
+                    <img src="{IMG_PATH}4_{$b}_{$n}.jpg" />
+                    <h3><a href="{$r['url']}" target="_blank">{str_cut(strip_tags($r['title']),'55','...')}</a></h3>
+                    <p>{str_cut(strip_tags($r['description']),'120','...')}</p>
+                    <div class="about_more cl">
+                        <div class="time fl cl">
+                            <img class="fl"  src="{IMG_PATH}wycms/time_icon.jpg" />
+                            <em class="fl" >{date('y-m-d',$r[inputtime])}</em>
+                        </div>
+                        <div class="more fr">
+                            <a href="{$r['url']}" target="_blank">More >></a>
+                        </div>
+                    </div>
+                </li>
+                {/loop}
+                {/wy}
+            </ul>
+        </div>
+    </div>
+    {if $b==1}</div>{/if}
+{/loop}
+{/wy}
+
+{elseif in_array($catid,array(5))}
+<div class="banner">
+    <div class="ban_hd">
+        <h3>亲办案件</h3>
+        <em>OFFICE  PRO  CASE</em>
+        <div class="line"></div>
+    </div>
+
+</div>
+<div class="position_bg">
+    <div class="position">
+        <p><em><img src="{IMG_PATH}wycms/posi.jpg" /></em>您现在的位置：<a href="/">首页 </a>>{catpos($catid)} </p>
+    </div>
+</div>
+
+<div class="ca_list">
+    <ul class="cl">
+        <li><a href="/"><img src="{IMG_PATH}wycms/home.jpg" /><p>首页</p></a></li>
+        <li><a href="#mao_cgal"><img src="{IMG_PATH}wycms/case_img1.jpg" /><p>成功案例</p></a></li>
+        <li><a href="#mao_zzbl"><img src="{IMG_PATH}wycms/case_img2.jpg"/><p>正在办理</p></a></li>
+    </ul>
+</div>
+{php $b=0;}
+{wy:content action="category" catid="5" order="id asc" return="data"}
+{loop $data $v}
+{php $b++;}
+{if $b==1}<div class="new_con">{/if}
+    <div class="ab_con cl">
+        <div class="ab_cont">
+            <div class="ab_tit cl">
+                {if $b==1}
+                <h3 id="mao_cgal" class="fl">{$v['catname']}</h3>
+                <em class="fl">SUCCESSFUL CASES </em>
+                {elseif $b==2}
+                <h3 id="mao_zzbl" class="fl">{$v['catname']}</h3>
+                <em class="fl">GOING  THROUGH</em>
+                {/if}
+            </div>
+            <span><a  href="{$v['url']}" id="more{$b}" catid="{$v[catid]}" class="nMore">更多>></a></span>
+        </div>
+
+        <div class="ab_conb">
+            <ul id="news{$b}">
+                {php $i=0;}
+                {wy:content action="lists" catid="$v[catid]" num="3" order="id desc" return="data"}
+                {loop $data $r}
+                {php $i++;}
+                <li class="{if $i==1}no{/if}">
+                 {if $b==1}
+                    <img src="{if $r['thumb']}{$r['thumb']}{else}{IMG_PATH}5_{$b}_{$n}.jpg{/if}" />
+                 {else}
+                    <img src="{IMG_PATH}5_{$b}_{$n}.jpg" />
+                 {/if}   
+                    <h3><a href="{$r['url']}" target="_blank">{str_cut(strip_tags($r['title']),'55','...')}</a></h3>
+                    <p>{str_cut(strip_tags($r['description']),'120','...')}</p>
+                    <div class="about_more cl">
+                        <div class="time fl cl">
+                            <img class="fl"  src="{IMG_PATH}wycms/time_icon.jpg" />
+                            <em class="fl" >{date('y-m-d',$r[inputtime])}</em>
+                        </div>
+                        <div class="more fr">
+                            <a href="{$r['url']}" target="_blank">More >></a>
+                        </div>
+                    </div>
+                </li>
+                {/loop}
+                {/wy}
+            </ul>
+        </div>
+    </div>
+    {if $b==1}</div>{/if}
+{/loop}
+{/wy}
+
+{elseif in_array($catid,array(6))}
+<div class="banner">
+    <div class="ban_hd">
+        <h3>法律资讯</h3>
+        <em>LEGAL ADVICE</em>
+        <div class="line"></div>
+    </div>
+
+</div>
+<div class="position_bg">
+    <div class="position">
+        <p><em><img src="{IMG_PATH}wycms/posi.jpg" /></em>您现在的位置：<a href="/">首页 </a>>{catpos($catid)} </p>
+    </div>
+</div>
+
+<div class="ab_list">
+    <ul class="cl">
+        <li><a href="/"><img src="{IMG_PATH}wycms/home.jpg" /><p>首页</p></a></li>
+        <li><a href="#mao_yjxw"><img src="{IMG_PATH}wycms/news_icon.jpg" /><p>业界新闻</p></a></li>
+        <li><a href="#mao_xfsd"><img src="{IMG_PATH}wycms/xin_icon.jpg" /><p>新法速递</p></a></li>
+        <li><a href="#mao_badw"><img src="{IMG_PATH}wycms/dan_cion.jpg" /><p>办案单位</p></a></li>
+    </ul>
+</div>
+{php $b=0;}
+{wy:content action="category" catid="6" num="2" order="id asc" return="data"}
+{loop $data $v}
+{php $b++;}
+{if $b==2}<div class="new_con">{/if}
+    <div class="ab_con cl">
+        <div class="ab_cont">
+            <div class="ab_tit cl">
+
+                {if $b==1}
+                <h3 id="mao_yjxw" class="fl">{$v['catname']}</h3>
+                <em class="fl">INDUSTRY NEWS</em>
+                {elseif $b==2}
+                <h3 id="mao_xfsd" class="fl">{$v['catname']}</h3>
+                <em class="fl">NEW LAW EXPRESS</em>
+                {/if}
+            </div>
+            <span><a  href="{$v['url']}" id="more{$b}" catid="{$v[catid]}" class="nMore">更多>></a></span>
+        </div>
+
+        <div class="ab_conb">
+            <ul id="news{$b}">
+                {php $i=0;}
+                {wy:content action="lists" catid="$v[catid]" num="3" order="id desc" return="data"}
+                {loop $data $r}
+                {php $i++;}
+                <li class="{if $i==1}no{/if}">
+                    <img src="{IMG_PATH}3_{$b}_{$n}.jpg" />
+                    <h3><a href="{$r['url']}" target="_blank">{str_cut(strip_tags($r['title']),'55','...')}</a></h3>
+                    <p>{str_cut(strip_tags($r['description']),'120','...')}</p>
+                    <div class="about_more cl">
+                        <div class="time fl cl">
+                            <img class="fl"  src="{IMG_PATH}wycms/time_icon.jpg" />
+                            <em class="fl" >{date('y-m-d',$r[inputtime])}</em>
+                        </div>
+                        <div class="more fr">
+                            <a href="{$r['url']}" target="_blank">More >></a>
+                        </div>
+                    </div>
+                </li>
+                {/loop}
+                {/wy}
+            </ul>
+        </div>
+    </div>
+    {if $b==2}</div>{/if}
+{/loop}
+{/wy}
+<div class="ab_con cl">
+    <div class="ab_cont">
+
+        <div class="ab_tit cl">
+            <h3 id="mao_badw" class="fl">办案单位</h3><em class="fl">HANDLING UNITS</em>
+        </div>
+
+    </div>
+
+    <div class="units_conb">
+        <ul class="cl">
+            {wy:content action="lists" catid="28" num="12" order="id desc" return="data"}
+            {loop $data $r}
+            <li ><a href="{$r[url]}">{str_cut(strip_tags($r['title']),'50','...')} </a></li>
+            {/loop}
+            {/wy}
+
+        </ul>
+    </div>
+</div>
+<!-- <div class="new_con">
+    <div class="ab_con cl">
+        <div class="ab_cont">
+
+            <div class="ab_tit cl">
+                <h3 id="mao_badw" class="fl">合作伙伴</h3><em class="fl">PARTNER</em>
+            </div>
+
+        </div>
+
+        <div class="units_conb">
+            <ul class="cl">
+                {wy:content action="lists" catid="34" num="12" order="id desc" return="data"}
+                {loop $data $r}
+                <li ><a href="{$r[url]}" target="_blank">{str_cut(strip_tags($r['title']),'50','...')} </a></li>
+                {/loop}
+                {/wy}
+
+            </ul>
+        </div>
+    </div>
+</div> -->
+{else}
+{/if}
+{template "content","footer"}

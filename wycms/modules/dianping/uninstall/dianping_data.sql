@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS `wycms_dianping_data`;

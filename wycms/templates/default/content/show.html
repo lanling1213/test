@@ -1,0 +1,141 @@
+{template "content","header"}
+<div class="banner">
+    <div class="ban_hd">
+        {if in_array($catid,array(9))}
+        <h3>专业团队</h3>
+        <em>PROFESSIONAL TEAM</em>
+        {elseif in_array($catid,array(11,12,13,14,15,16,17,18))}
+        <h3>业务专长</h3>
+        <em>EXPERTISE</em>
+        {elseif in_array($catid,array(19,20,21))}
+        <h3>债务知识</h3>
+        <em>DEBT KNOWLEDGE</em>
+        {elseif in_array($catid,array(22,23))}
+        <h3>律师文集</h3>
+        <em>LEGALERS ANTHOLOGY</em>
+        {elseif in_array($catid,array(24,25))}
+        <h3>亲办案件</h3>
+        <em>OFFICE  PRO  CASE</em>
+        {elseif in_array($catid,array(26,27,28,34))}
+        <h3>法律资讯</h3>
+        <em>LEGAL ADVICE</em>
+        {elseif in_array($catid,array(32,33))}
+        <h3>关于我们</h3>
+        <em>ABOUT US</em>
+        {/if}
+        <div class="line"></div>
+    </div>
+
+</div>
+<div class="position_bg">
+    <div class="position">
+        <p><em><img src="{IMG_PATH}wycms/posi.jpg" /></em>您现在的位置：<a href="/">首页 </a>>{catpos($catid)}</p>
+    </div>
+</div>
+{if in_array($catid,array(22,23,24,25))}
+<div class="ca_list">
+{else}
+<div class="ab_list">
+{/if}
+    <ul class="cl" style="{if in_array($catid,array(11,12,13,14,15,16,17,18))}width:1400px;{/if}">
+        {if in_array($catid,array(9))}
+        <li><a href="/"><img src="{IMG_PATH}wycms/home.jpg" /><p>首页</p></a></li>
+        <li><a href="{$CATEGORYS[8][url]}"><img src="{IMG_PATH}wycms/shouxi_img.jpg" /><p>首席律师</p></a></li>
+        <li><a href="{$CATEGORYS[1][url]}#mao_jyls"><img src="{IMG_PATH}wycms/team_img.jpg"/><p>精英团队</p></a></li>
+        <li><a href="{$CATEGORYS[10][url]}"><img src="{IMG_PATH}wycms/profile_img.jpg" /><p>律所介绍</p></a></li>
+        {elseif in_array($catid,array(11,12,13,14,15,16,17,18))}
+        {wy:content action="category" catid="2" return="datas"}
+        {loop $datas $r}
+        <li>
+            <a href="{$r['url']}">
+                <img src="{IMG_PATH}wycms/icon{$n}.jpg" />
+                <p>{$r[catname]}</p>
+            </a>
+        </li>
+        {/loop}
+        {/wy}
+        {elseif in_array($catid,array(19,20,21))}
+        <li><a href="/"><img src="{IMG_PATH}wycms/home.jpg" /><p>首页</p></a></li>
+        <li><a href="{$CATEGORYS[3][url]}#mao_jdcs"><img src="{IMG_PATH}wycms/know_icon1.jpg" /><p>借贷常识 </p></a></li>
+        <li><a href="{$CATEGORYS[3][url]}#mao_dxal"><img src="{IMG_PATH}wycms/know_icon2.jpg"/><p>典型案例 </p></a></li>
+        <li><a href="{$CATEGORYS[3][url]}#mao_zzzn"><img src="{IMG_PATH}wycms/know_icon3.jpg"/><p>追债指南 </p></a></li>
+        {elseif in_array($catid,array(22,23))}
+        <li><a href="/"><img src="{IMG_PATH}wycms/home.jpg" /><p>首页</p></a></li>
+        <li><a href="{$CATEGORYS[4][url]}#mao_flws"><img src="{IMG_PATH}wycms/book_img.jpg" /><p>法律文书</p></a></li>
+        <li><a href="{$CATEGORYS[4][url]}#mao_xswz"><img src="{IMG_PATH}wycms/book_img1.jpg"/><p>学术文章</p></a></li>
+        {elseif in_array($catid,array(24,25))}
+        <li><a href="/"><img src="{IMG_PATH}wycms/home.jpg" /><p>首页</p></a></li>
+        <li><a href="{$CATEGORYS[5][url]}#mao_cgal"><img src="{IMG_PATH}wycms/case_img1.jpg" /><p>成功案例</p></a></li>
+        <li><a href="{$CATEGORYS[5][url]}#mao_zzbl"><img src="{IMG_PATH}wycms/case_img2.jpg"/><p>正在办理</p></a></li>
+        {elseif in_array($catid,array(26,27,28,34))}
+        <li><a href="/"><img src="{IMG_PATH}wycms/home.jpg" /><p>首页</p></a></li>
+        <li><a href="{$CATEGORYS[6][url]}#mao_yjxw"><img src="{IMG_PATH}wycms/news_icon.jpg" /><p>业界新闻</p></a></li>
+        <li><a href="{$CATEGORYS[6][url]}#mao_xfsd"><img src="{IMG_PATH}wycms/xin_icon.jpg" /><p>新法速递</p></a></li>
+        <li><a href="{$CATEGORYS[6][url]}#mao_badw"><img src="{IMG_PATH}wycms/dan_cion.jpg" /><p>办案单位</p></a></li>
+
+        {/if}
+
+    </ul>
+</div>
+
+<div class="bus_conbg">
+    <div class="bus_con">
+        <div class="bus_cont">
+            <h3>{$title}</h3>
+            <em>来源：{if $copyfrom}{$copyfrom}{else}未知{/if}      作者：{if $writer}{$writer}{else}未知{/if}     时间：{str_cut($inputtime,16,"")}</em>
+        </div>
+        {if $catid==9}
+        <div class="pe_pic">
+            <img src="{$thumb}" alt="{$title}"/>
+        </div>
+        {/if}
+        <p>{$content}</p>
+
+        <div class="bus_conm cl">
+            <ul class="fl">
+               {if module_exists('mood')}
+               <script type="text/javascript" src="{APP_PATH}index.php?m=mood&c=index&a=init&id={id_encode($catid,$id,$siteid)}"></script>
+               {/if}
+                <li><a href="/"><img src="{IMG_PATH}wycms/return.jpg" /></a></li>
+            </ul>
+
+            <div class="share fr ">
+
+                <div class="jiathis_style_32x32" style=" float:left">
+                    <!-- JiaThis Button BEGIN -->
+                    <div id="ckepop">
+                        <a class="jiathis_button_weixin" >
+                            <img src="{IMG_PATH}wycms/share.jpg" width="221px" height="40px"  />
+                        </a> 
+                        <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+                    </div> <!-- JiaThis Button END -->
+                </div>
+                <div class="fenxiang fl">
+                    <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" style=" width:250px; height:27px; overflow:hidden;">
+                        <span class="bds_more">分享到：</span>
+                        <a class="bds_qzone"></a>
+                        <a class="bds_tsina"></a>
+                        <a class="bds_tqq"></a>
+                        <a class="bds_renren"></a>
+                        <a class="bds_t163"></a>
+                        <a class="shareCount"></a>
+                    </div>
+                    <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=697092" ></script>
+                    <script type="text/javascript" id="bdshell_js"></script>
+                    <script type="text/javascript">
+                        document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date() / 3600000)
+                    </script>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="bus_conb">
+            <p>免责声明：本网部分文章和信息来源于国际互联网，本网转载出于传递更多信息和学习之目的。如转载稿涉及版权等问题，请立即联系网站所有人，我们会予以更改或删除相关文章，保证您的权利。</p>
+            <li><span>上一篇：</span>{if $next_page[title]=="最后一页"}<span>没有了</span>{else}<a href="{$next_page[url]}">{$next_page[title]}</a>{/if}</li>
+            <li><span>下一篇：</span>{if $previous_page[title]=="第一页"}<span>没有了</span>{else}<a href="{$previous_page[url]}">{$previous_page[title]}</a>{/if}</li>
+        </div>
+    </div>
+</div>
+{template "content","footer"}

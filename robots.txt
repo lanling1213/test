@@ -1,0 +1,9 @@
+#
+# robots.txt for WYcms
+#
+User-agent: * 
+Disallow: /data
+Disallow: /wycms
+Disallow: /wysso_server
+Disallow: /api
+Disallow: /admin.php

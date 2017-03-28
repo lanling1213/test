@@ -1,0 +1,277 @@
+{template "wap","header"}
+{if in_array($catid,array(1))}
+<div class="ab_list">
+    <ul class="cl">
+        <li><a href="/"><img src="{IMG_PATH}wap/home.jpg" /><p>首页</p></a></li>
+        <li><a href="/lists_8.html"><img src="{IMG_PATH}wap/shouxi_img.jpg" /><p>首席律师 </p></a></li>
+        <li><a href="#team_mao"><img src="{IMG_PATH}wap/team_img.jpg"/><p>精英团队</p></a></li>
+        <li><a href="/lists_10.html"><img src="{IMG_PATH}wap/profile_img.jpg"/><p>律所介绍 </p></a></li>
+    </ul>
+</div>
+<div class="ab_conb cl">
+    <div class="team_cont">
+        <div class="ab_tit cl">
+            <h3 class="fl">首席律师</h3><em class="fl">CHIEF COUNSEL</em>
+        </div>
+        <span><a href="/lists_8.html">更多>></a></span>
+    </div>
+    <div class="team_conm">
+        <img class="fl" alt='李源律师' src="{IMG_PATH}wap/img_team.jpg">
+        {wy:get sql="select * from wy_page where catid=8" return="data"}
+        {loop $data $r}
+        <p class="fr">{str_cut(strip_tags($r['content']),'240','...')}</p>
+        {/loop}
+        {/wy}
+    </div>
+</div>
+</div>
+<div class="team_cont">
+    <div class="ab_tit cl">
+        <h3 id="team_mao" class="fl">精英团队</h3><em class="fl">CHIEF COUNSEL</em>
+    </div>
+    <!--<span><a href="#">更多>></a></span>-->
+</div>
+<div class="team_con">
+    <ul class="cl">
+        {wy:content action="lists" catid="9" num="8" order="inputtime desc" return="data"}
+        {loop $data $r}
+        <li class="{if $n%2!=0}no{/if}"><a href='/show_{$r[catid]}_{$r[id]}.html'><img style="width:160px;height: 180px;" alt="{$r['title']}" src="{$r['thumb']}"><p>{$r['title']}</p></a></li>
+        {/loop}
+        {/wy}
+    </ul>
+</div>
+{elseif in_array($catid,array(5))}
+<div class="ca_list">
+    <ul class="cl">
+        <li><a href="/"><img src="{IMG_PATH}wap/home.jpg" /><p>首页</p></a></li>
+        <li><a href="#cases_mao"><img src="{IMG_PATH}wap/case_img1.jpg" /><p>成功案例</p></a></li>
+        <li><a href="#go_mao"><img src="{IMG_PATH}wap/case_img2.jpg"/><p>正在办理</p></a></li>
+    </ul>
+</div>
+<div class="ab_conb cl">
+    <div class="ab_cont">
+        <div class="ab_tit cl">
+            <h3 id="cases_mao" class="fl">成功案例</h3><em class="fl">CASES</em>
+        </div>
+        <span><a href="/lists_24.html">更多>></a></span>
+    </div>
+    <div class="ab_conm">
+        <img class="img_size" alt='成功案例' src="{$CATEGORYS[24]['image']}" />
+        <ul>
+            {wy:content action="lists" catid="24" num="5" order="inputtime desc" return="data"}
+            {loop $data $r}
+            <li><em><img src="{IMG_PATH}wap/about_icon1.png" /></em><a href="/show_{$r[catid]}_{$r[id]}.html">{str_cut($r['title'],'50','...')}</a></li>
+            {/loop}
+            {/wy}
+        </ul>
+    </div>
+</div>
+</div>
+<div class="ab_cont">
+    <div class="ab_tit cl">
+        <h3 id="go_mao" class="fl">正在办理</h3><em class="fl">GOING THROUGH </em>
+    </div>
+    <span><a href="/lists_25.html">更多>></a></span>
+</div>
+<div class="bo_conm">
+    <img class="img_size" alt="正在办理" src="{$CATEGORYS[25]['image']}" />
+    <ul>
+        {wy:content action="lists" catid="25" num="5" order="inputtime desc" return="data"}
+        {loop $data $r}
+        <li><em><img src="{IMG_PATH}wap/about_icon1.png" /></em><a href="/show_{$r[catid]}_{$r[id]}.html">{str_cut($r['title'],'50','...')}</a></li>
+        {/loop}
+        {/wy}
+    </ul>
+</div>
+</div>
+{elseif in_array($catid,array(3))}
+<div class="ab_list">
+    <ul class="cl">
+        <li><a href="/"><img src="{IMG_PATH}wap/home.jpg" /><p>首页</p></a></li>
+        <li><a href="#know_mao"><img src="{IMG_PATH}wap/know_icon1.jpg" /><p>借贷常识 </p></a></li>
+        <li><a href="#type_mao"><img src="{IMG_PATH}wap/know_icon2.jpg"/><p>典型案例 </p></a></li>
+        <li><a href="#zhui_mao"><img src="{IMG_PATH}wap/know_icon3.jpg"/><p>追债指南 </p></a></li>
+    </ul>
+</div>
+<div class="ab_conb cl">
+    <div class="ab_cont">
+        <div class="ab_tit cl">
+            <h3  id="know_mao" class="fl">借贷常识</h3><em class="fl">SENSE LENDING</em>
+        </div>
+        <span><a href="/lists_19.html">更多>></a></span>
+    </div>
+    <div class="ab_conm">
+        <img class="img_size" alt="借贷常识" src="{$CATEGORYS[19]['image']}" />
+        <ul>
+            {wy:content action="lists" catid="19" num="5" order="inputtime desc" return="data"}
+            {loop $data $r}
+            <li><em><img src="{IMG_PATH}wap/about_icon1.png" /></em><a href="/show_{$r[catid]}_{$r[id]}.html">{str_cut($r['title'],'50','...')}</a></li>
+            {/loop}
+            {/wy}
+        </ul>
+    </div>
+</div>
+</div>
+<div class="ab_cont">
+    <div class="ab_tit cl">
+        <h3 id="type_mao" class="fl">典型案例</h3><em class="fl">TYPICAL CASE </em>
+    </div>
+    <span><a href="/lists_20.html">更多>></a></span>
+</div>
+<div class="bo_conm">
+    <img class="img_size" alt="典型案例" src="{$CATEGORYS[20]['image']}" />
+    <ul>
+        {wy:content action="lists" catid="20" num="5" order="inputtime desc" return="data"}
+        {loop $data $r}
+        <li><em><img src="{IMG_PATH}wap/about_icon1.png" /></em><a href="/show_{$r[catid]}_{$r[id]}.html">{str_cut($r['title'],'50','...')}</a></li>
+        {/loop}
+        {/wy}
+    </ul>
+</div>
+</div>
+<div class="ab_conb cl">
+    <div class="ab_cont">
+        <div class="ab_tit cl">
+            <h3 id="zhui_mao" class="fl">追债指南</h3><em class="fl">GUIDELINES</em>
+        </div>
+        <span><a href="/lists_21.html">更多>></a></span>
+    </div>
+    <div class="ab_conm">
+        <img class="img_size" alt="追债指南" src="{$CATEGORYS[21]['image']}" />
+        <ul>
+            {wy:content action="lists" catid="21" num="5" order="inputtime desc" return="data"}
+            {loop $data $r}
+            <li><em><img src="{IMG_PATH}wap/about_icon1.png" /></em><a href="/show_{$r[catid]}_{$r[id]}.html">{str_cut($r['title'],'50','...')}</a></li>
+            {/loop}
+            {/wy}
+        </ul>
+    </div>
+</div>
+</div>
+{elseif in_array($catid,array(4))}
+<div class="ca_list">
+    <ul class="cl">
+        <li><a href="/"><img src="{IMG_PATH}wap/home.jpg" /><p>首页</p></a></li>
+        <li><a href="#book_mao"><img src="{IMG_PATH}wap/book_img.jpg" /><p>法律文书</p></a></li>
+        <li><a href="#artical_mao"><img src="{IMG_PATH}wap/book_img1.jpg"/><p>学术文章</p></a></li>
+    </ul>
+</div>
+<div class="ab_conb cl">
+    <div class="ab_cont">
+
+        <div class="ab_tit cl">
+            <h3 id="book_mao" class="fl">法律文书</h3><em class="fl">INSTRUMENTS</em>
+        </div>
+        <span><a href="/lists_22.html">更多>></a></span>
+    </div>
+
+    <div class="ab_conm">
+        <img class="img_size" alt="法律文书" src="{$CATEGORYS[22]['image']}"  />
+        <ul>
+            {wy:content action="lists" catid="22" num="5" order="inputtime desc" return="data"}
+            {loop $data $r}
+            <li><em><img src="{IMG_PATH}wap/about_icon1.png" /></em><a href="/show_{$r[catid]}_{$r[id]}.html">{str_cut($r['title'],'50','...')}</a></li>
+            {/loop}
+            {/wy}
+        </ul>
+    </div>
+</div>
+</div>
+<div class="ab_cont">
+    <div class="ab_tit cl">
+        <h3 id="artical_mao" class="fl">学术文章</h3><em class="fl">JOURNAL </em>
+    </div>
+    <span><a href="/lists_23.html">更多>></a></span>
+</div>
+<div class="bo_conm">
+    <img class="img_size" alt="学术文章" src="{$CATEGORYS[23]['image']}"  />
+    <ul>
+        {wy:content action="lists" catid="23" num="5" order="inputtime desc" return="data"}
+        {loop $data $r}
+        <li><em><img src="{IMG_PATH}wap/about_icon1.png" /></em><a href="/show_{$r[catid]}_{$r[id]}.html">{str_cut($r['title'],'50','...')}</a></li>
+        {/loop}
+        {/wy}
+    </ul>
+</div>
+</div>
+{elseif in_array($catid,array(6))}
+<div class="ab_list">
+    <ul class="cl">
+        <li><a href="/"><img src="{IMG_PATH}wap/home.jpg" /><p>首页</p></a></li>
+        <li><a href="#know_mao"><img src="{IMG_PATH}wap/news_icon.jpg" /><p>业界新闻 </p></a></li>
+        <li><a href="#type_mao"><img src="{IMG_PATH}wap/xin_icon.jpg"/><p>新法速递 </p></a></li>
+        <li><a href="#zhui_mao"><img src="{IMG_PATH}wap/dan_cion.jpg"/><p>办案单位 </p></a></li>
+    </ul>
+</div>
+<div class="ab_conb cl">
+    <div class="ab_cont">
+        <div class="ab_tit cl">
+            <h3  id="know_mao" class="fl">业界新闻</h3><em class="fl">INDUSTRY NEWS</em>
+        </div>
+        <span><a href="/lists_26.html">更多>></a></span>
+    </div>
+    <div class="ab_conm">
+        <img class="img_size" alt="业界新闻" src="{$CATEGORYS[26]['image']}" />
+        <ul>
+            {wy:content action="lists" catid="26" num="5" order="inputtime desc" return="data"}
+            {loop $data $r}
+            <li><em><img src="{IMG_PATH}wap/about_icon1.png" /></em><a href="/show_{$r[catid]}_{$r[id]}.html">{str_cut($r['title'],'50','...')}</a></li>
+            {/loop}
+            {/wy}
+        </ul>
+    </div>
+</div>
+</div>
+<div class="ab_cont">
+    <div class="ab_tit cl">
+        <h3 id="type_mao" class="fl">新法速递</h3><em class="fl">NEW LAW  </em>
+    </div>
+    <span><a href="/lists_27.html">更多>></a></span>
+</div>
+<div class="bo_conm">
+    <img class="img_size" alt="新法速递" src="{$CATEGORYS[27]['image']}" />
+    <ul>
+        {wy:content action="lists" catid="27" num="5" order="inputtime desc" return="data"}
+        {loop $data $r}
+        <li><em><img src="{IMG_PATH}wap/about_icon1.png" /></em><a href="/show_{$r[catid]}_{$r[id]}.html">{str_cut($r['title'],'50','...')}</a></li>
+        {/loop}
+        {/wy}
+    </ul>
+</div>
+</div>
+<div class="ab_conb cl">
+    <div class="ab_cont">
+        <div class="ab_tit cl">
+            <h3 id="zhui_mao" class="fl">办案单位</h3><em class="fl">HANDLING UNITS</em>
+        </div>
+        <span><a href="/lists_28.html">更多>></a></span>
+    </div>
+    <div class="pa_conm">
+        <ul>
+            {wy:content action="lists" catid="28" num="4" order="inputtime desc" return="data"}
+            {loop $data $r}
+            <li><a href="/show_{$r[catid]}_{$r[id]}.html">{$r['title']}</a></li>
+            {/loop}
+            {/wy}
+        </ul>
+    </div>
+</div>
+</div>
+<div class="ab_cont">
+    <div class="ab_tit cl">
+        <h3 id="type_mao" class="fl">合作伙伴</h3><em class="fl">PARTNER  </em>
+    </div>
+    <span><a href="/lists_34.html">更多>></a></span>
+</div>
+<div class="pa_conm">
+    <ul>
+        {wy:content action="lists" catid="34" num="3" order="inputtime desc" return="data"}
+        {loop $data $r}
+        <li><a href="/show_{$r[catid]}_{$r[id]}.html">{$r['title']}</a></li>
+        {/loop}
+        {/wy}
+    </ul>
+</div>
+</div>
+{/if}
+{template "wap","footer"}

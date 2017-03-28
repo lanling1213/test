@@ -1,0 +1,104 @@
+{template "content","header","wycms"}
+<div class="ifbanner"><a href="{APP_PATH}" alt="商翼云咨询" title="商翼云咨询"></a></div>
+<div class="space20"></div>
+<div class="main">
+    <div class="w980">
+        {template "content","left","wycms"}
+        <div class="conbox_r fr">
+            <div class="info">
+                <div class="location">
+                    您现在的位置是：<a href="{APP_PATH}">商翼云咨询</a>&gt;{catpos($catid)}
+                </div>
+                <div class="space20"></div>
+                <div class="inner_online_service">
+                	<div class="inner_online_service_t">
+                    	<p>1、不论您想得到法律咨询、情感疏导或聘请私人律师，请提前与我们预约。</p>
+                        <p>2、如果您所涉及的问题比较紧急，而我们未接听您的电话或手机关机，说明我们正在开庭或因其他原因不方便应答，请您通过发送短信的方式，将您的问题发送给我们，我们看到短信后会立即回复。</p>
+                        <P style="color:#cc0000">咨询热线：{$admin_info[$siteid][url]}</P>
+                    </div>
+                    <div class="space30"></div>
+                    <script type="text/javascript">
+                        $(function() {
+                            var demo = $("#myform").Validform({
+                                tiptype: function(msg, o, cssctl) {
+                                    var objtip = $("#msgdemo");
+                                    cssctl(objtip, o.type);
+                                    objtip.text(msg);
+                                },
+                                ajaxPost: true, //AJAX请求
+                                btnSubmit:"#submitform",
+                                callback: function(data) {        //AJAX请求的回调函数
+                                    if (data.status == 'y' && data.info == 'code_error') {
+                                        $('#msgdemo').html("<font color='red'>验证码错误</font>");
+                                        return false;
+                                    } else {
+                                        $('#msgdemo').html(" ");
+                                        location.href = "{APP_PATH}post_success";
+                                    }
+                                }
+                            });
+                            demo.addRule([
+                                {
+                                    ele: "#name",
+                                    datatype: "*1-8",
+                                    nullmsg: "请输入姓名",
+                                    errormsg: "姓名在1-8个字符之间"
+                                },
+                                {
+                                    ele: "#tel",
+                                    datatype: "/^0{0,1}(13[0-9]|15[7-9]|153|156|18[7-9])[0-9]{8}$/",
+                                    nullmsg: "请输入手机号码",
+                                    errormsg: "手机号码不正确"
+                                },
+                                {
+                                    ele: "#email",
+                                    datatype: "e",
+                                    nullmsg: "请输入emial",
+                                    errormsg: "请输入正确的email"
+                                },
+                                {
+                                    ele: "#company",
+                                    datatype: "*1-30",
+                                    nullmsg: "请输入公司名称",
+                                    errormsg: "公司名称在1-8个字符之间"
+                                },
+                                {
+                                    ele: "#introduce",
+                                    datatype: "*6-1000",
+                                    nullmsg: "请输入咨询内容",
+                                    errormsg: "咨询内容在6-1000个字之间"
+                                },
+                                {
+                                    ele: "#code",
+                                    datatype: "/^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]$/",
+                                    value: "验证码",
+                                    tip: "验证码",
+                                    nullmsg: "请输入输入验证码"                
+                                }
+                            ]);
+                        });
+                    </script>  
+                    <div class="online_service_c">
+                        <form action="/onorder/" method="post" enctype="application/x-www-form-urlencoded" id="myform">
+                            <input name="" type="text" class="txt fl w440" value="姓名/Name *" onfocus="if(this.value == this.defaultValue) this.value=''" onblur="if(this.value == this.defaultValue || this.value == '')this.value=this.defaultValue" />
+                            <div class="space"></div>
+                            <input name="" type="text" class="txt fl w440" value="公司/Company *" onfocus="if(this.value == this.defaultValue) this.value=''" onblur="if(this.value == this.defaultValue || this.value == '')this.value=this.defaultValue" />
+                            <div class="space"></div>
+                            <input name="" type="text" class="txt fl w440" value="E-mail *" onfocus="if(this.value == this.defaultValue) this.value=''" onblur="if(this.value == this.defaultValue || this.value == '')this.value=this.defaultValue" />
+                            <div class="space"></div>
+                            <input name="" type="text" class="txt fl w440" value="电话/Mobile *" onfocus="if(this.value == this.defaultValue) this.value=''" onblur="if(this.value == this.defaultValue || this.value == '')this.value=this.defaultValue" />
+                            <div class="space"></div>
+                            <input name="" type="text" class="txt fl w440" value="您需要的服务或报价/Service you need" onfocus="if(this.value == this.defaultValue) this.value=''" onblur="if(this.value == this.defaultValue || this.value == '')this.value=this.defaultValue" />
+                            <div class="space"></div>
+                            <input name="" type="text" class="txt fl w144" value="验证码/Identifying Code" onfocus="if(this.value == this.defaultValue) this.value=''" onblur="if(this.value == this.defaultValue || this.value == '')this.value=this.defaultValue" /><img class="fl ml10" src="images/wycms/test/yzm.png" />
+                            <div class="space"></div>
+                            <a href="#" class="but">点击咨询/Inquiry</a>
+                            <div class="space30"></div>
+                        </form>
+                    </div>
+               </div>
+            </div>
+        </div>
+    </div>
+</div>
+{template "content","footer","wycms"}

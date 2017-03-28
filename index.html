@@ -1,334 +1,743 @@
-<html>
-<head>
-	<title>BBS论坛</title>
-	<include file="./Public/common/header.html"/>
-	<style>
-		/*.btn-default{
-			width:100px;
-			height:50px
-		}
-		
-		.carousel{
-			width:300px;
-			height:50px
-		}*/
-		.featurette{
-
-			height:300px
-		}
-		.navbar-fixed-bottom{
-			height:20px;
-			background-color:red
-		}
-	</style>
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta name="location" content="province=广东;city=深圳"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>深圳债权债务律师|深圳经济纠纷律师|深圳追债律师|深圳收债律师-深圳追债网</title> 
+        <meta name="keywords" content="深圳债权债务律师,深圳经济纠纷律师,深圳追债律师,深圳收债律师,深圳追债网"/>
+        <meta name="description" content="深圳追债网栏目为您提供相关法律知识和内容，如果还需要更多的、专业的知识，可咨询深圳追债律师李源律师，咨询热线：0755-36866712"/>
 
 </head>
-<body>
-	<!-- 分頁http://1.thinkphptest.applinzi.com/index.php -->
-	<!-- <?php dump($list) ;?> -->
-<!-- 	{$list}
-	<table>  
-	<volist name="list" id="vo">
-	    <tr>
-		<td>
-		{$vo.post_title}
-		</td>
-		</tr>
-	</volist>
-	</table>
-	<div class="pagelist">{$page}</div> -->
-<?php "hello lan world" ;?> 
-	<!-- 内容 -->
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-4">
-				<div id="myCarousel" class="carousel slide">
-					<!-- 轮播（Carousel）指标 -->
-					<ol class="carousel-indicators">
-						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-						<li data-target="#myCarousel" data-slide-to="1"></li>
-						<li data-target="#myCarousel" data-slide-to="2"></li>
-						<li data-target="#myCarousel" data-slide-to="3"></li>
-						<li data-target="#myCarousel" data-slide-to="4"></li>
-						<li data-target="#myCarousel" data-slide-to="5"></li>
-						<li data-target="#myCarousel" data-slide-to="6"></li>
-						<!-- <li data-target="#myCarousel" data-slide-to="2"></li> -->
-					</ol>
-					<!-- 轮播（Carousel）项目 -->
-					<div class="carousel-inner">
-						<div class="item active">
-							<img src="__PUBLIC__/image/1.jpg" alt="First slide" style="height:400px"  class="first-slide">
-							<div class="carousel-caption"><strong> </strong> </div>
-						</div>
-						<div class="item">
-							<img src="__PUBLIC__/image/2.jpg" alt="Second slide" style="height:400px"  class="first-slide">
-							<div class="carousel-caption"><strong> </strong></div>
-						</div>
-						<div class="item">
-							<img src="__PUBLIC__/image/6.jpg" alt="3 slide" style="height:400px"  class="first-slide">
-							<div class="carousel-caption"><strong> </strong></div>
-						</div>
-						<div class="item">
-							<img src="__PUBLIC__/image/7.jpg" alt="4 slide" style="height:400px"  class="first-slide">
-							<div class="carousel-caption"><strong> </strong></div>
-						</div>
-						<div class="item">
-							<img src="__PUBLIC__/image/8.jpg" alt="5 slide" style="height:400px"  class="first-slide">
-							<div class="carousel-caption"><strong> </strong></div>
-						</div>
-						<div class="item">
-							<img src="__PUBLIC__/image/9.jpg" alt="6 slide" style="height:400px"  class="first-slide">
-							<div class="carousel-caption"><strong> </strong></div>
-						</div>
+<link href="http://www.law380.com/skins/css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="http://www.law380.com/skins/js/jquery1.42.min.js"></script>
+    <script type="text/javascript" src="http://www.law380.com/skins/js/jquery.SuperSlide.2.1.js"></script>
+     <SCRIPT LANGUAGE="JavaScript">
+    function mobile_device_detect(url)
+    {
 
-				</div>
-				<!-- 轮播（Carousel）导航 -->
-				<a class="carousel-control left" href="#myCarousel"
-				data-slide="prev">&lsaquo;</a>
-				<a class="carousel-control right" href="#myCarousel"
-				data-slide="next">&rsaquo;</a>
-			</div>
-		</div>
-		<div class="col-sm-8">
-			<div class="row">
-				<div class="col-xs-8">
-					<ul id="myTab" class="nav nav-tabs">
-						<li class="active">
-							<a href="#home" data-toggle="tab">W3Cschool Home</a>
-						</li>
-						<li>
-							<a href="#new" data-toggle="tab">iOS</a>
-						</li>
-						<li class="dropdown">
-							<a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown">
-								Java <b class="caret"></b>
-							</a>
-							<ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
-								<li>
-									<a href="#good" tabindex="-1" data-toggle="tab">jmeter</a>
-								</li>
-								<li>
-									<a href="#ejb" tabindex="-1" data-toggle="tab">ejb</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-					<div id="myTabContent" class="tab-content">
-						<div class="tab-pane fade in active" id="home">
-							<p>
-								<ul>
-									<li>1</li>
-									<li>2</li>
-									<li>3</li>
-									<li>4</li>
-								</ul>
-							</p>
-						</div>
-						<div class="tab-pane fade" id="new">
-							<ul>
-								<li>1</li>
-								<li>2</li>
-								<li>3</li>
-								<li>4</li>
-							</ul>
-						</div>
-						<div class="tab-pane fade" id="good">
-							<p>jMeter 是一款开源的测试软件。它是 100% 纯 Java 应用程序，用于负载和性能测试。</p>
-						</div>
-						<div class="tab-pane fade" id="ejb">
-							<p>
-								Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
-							</p>
-						</div>
-					</div>
-				</div>
-<!-- 				<div class="col-sm-4 ">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h3 class="panel-title">Panel title1</h3>
-						</div>
-						<div class="panel-body">
-							<a href="#">Panel content</a>
-						</div>
-						<div class="panel-body">
-							<a href="#">Panel content</a>
-						</div>
-						<div class="panel-body">
-							<a href="#">Panel content</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h3 class="panel-title">Panel title2</h3>
-						</div>
-						<div class="panel-body">
-							Panel content
-						</div>
-						<div class="panel-body">
-							Panel content
-						</div>
-						<div class="panel-body">
-							Panel content
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h3 class="panel-title">Panel title3</h3>
-						</div>
-						<div class="panel-body">
-							Panel content
-						</div>
-						<div class="panel-body">
-							Panel content
-						</div>
-						<div class="panel-body">
-							Panel content
-						</div>
-					</div>
-				</div>
-			</div> -->
-<!-- 			<div class="row">
-				<div class="col-sm-6">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h3 class="panel-title">Panel title4</h3>
-						</div>
-						<div class="panel-body">
-							Panel content
-						</div>
-						<div class="panel-body">
-							Panel content
-						</div>
-						<div class="panel-body">
-							Panel content
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h3 class="panel-title">Panel title5</h3>
-						</div>
-						<div class="panel-body">
-							Panel content
-						</div>
-						<div class="panel-body">
-							Panel content
-						</div>
-						<div class="panel-body">
-							Panel content
-						</div>
-					</div>
-				</div>
-			</div> -->
+            var thisOS=navigator.platform;
 
-		</div>
+            var os=new Array("iPhone","iPod","iPad","android","Nokia","SymbianOS","Symbian","Windows Phone","Phone","Linux armv71","MAUI","UNTRUSTED/1.0","Windows CE","BlackBerry","IEMobile");
 
-		<!-- 版块内的主题 -->
-		<div class="row">
-			<div class="col-sm-12">
-				<div class="list-group">
-					<a href="#" class="list-group-item active">
-						<h4 class="list-group-item-heading">
-							版块名
-						</h4>
-					</a>
-					<a href="#" class="list-group-item">
-						<h4 class="list-group-item-heading">
-							主题1
-						</h4>
-						<p class="list-group-item-text">
-							您将通过网页进行免费域名注册。
-						</p>
-					</a>
-					<a href="#" class="list-group-item">
-						<h4 class="list-group-item-heading">
-							主题2
-						</h4>
-						<p class="list-group-item-text">
-							我们提供 24*7 支持。
-						</p>
-					</a>
-				</div>
-			</div>
+     for(var i=0;i<os.length;i++)
+            {
 
-		</div>
-		<div class="row">
-  <!-- <div class="col-sm-12">
-</div> -->
+     if(thisOS.match(os[i]))
+            {   
+      window.location=url;
+     }
+      
+     }
 
-<!-- 版块内容 -->
-<hr class="featurette-divider">
 
-<div class="row featurette">
-	<div class="col-md-7">
-		<h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-		<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-	</div>
-	<div class="col-md-5">
-		<img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" src="__PUBLIC__/image/3.jpg" >
-	</div>
-</div>
-</div>
-<div class="row">
-	<hr class="featurette-divider">
+     //因为相当部分的手机系统不知道信息,这里是做临时性特殊辨认
+     if(navigator.platform.indexOf('iPad') != -1)
+            {
+      window.location=url;
+     }
 
-	<div class="row featurette">
-		<div class="col-md-7 col-md-push-5">
-			<h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-			<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-		</div>
-		<div class="col-md-5 col-md-pull-7">
-		<!-- style="width:480px;height:300px" -->
-			<img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" src="__PUBLIC__/image/4.jpg" >
-		</div>
-	</div>
-	<hr class="featurette-divider">
+     //做这一部分是因为Android手机的内核也是Linux
+     //但是navigator.platform显示信息不尽相同情况繁多,因此从浏览器下手，即用navigator.appVersion信息做判断
+      var check = navigator.appVersion;
+
+      if( check.match(/linux/i) )
+              {
+       //X11是UC浏览器的平台 ，如果有其他特殊浏览器也可以附加上条件
+       if(check.match(/mobile/i) || check.match(/X11/i))
+                     {
+       window.location=url;
+       }  
+     }
+
+     //类in_array函数
+     Array.prototype.in_array = function(e)
+     {
+      for(i=0;i<this.length;i++)
+      {
+       if(this[i] == e)
+       return true;
+      }
+      return false;
+     }
+    } 
+
+    mobile_device_detect("http://m.law380.com/");
+
+    </SCRIPT>
+    <body onload="mobile_device_detect('http://m.law380.com/')">
+
+        <div class="header">
+            <div class="logo fl">
+                <a href="/"><img src="http://www.law380.com/skins/images/wycms/logo.jpg" alt="深圳追债网" /></a>
+            </div>
+
+            <div class="nav fr">
+                <ul class="cl">
+                    <li><a href="/">首页</a></li>
+                                                            <li><em>|</em><a href="http://www.law380.com/zytd/">专业团队</a></li>
+                                        <li><em>|</em><a href="http://www.law380.com/gyljr/">业务专长</a></li>
+                                        <li><em>|</em><a href="http://www.law380.com/qbaj/">亲办案件</a></li>
+                                        <li><em>|</em><a href="http://www.law380.com/flzx/">法律资讯</a></li>
+                                        <li><em>|</em><a href="http://www.law380.com/zwzs/">债务知识</a></li>
+                                        <li><em>|</em><a href="http://www.law380.com/lswj/">律师文集</a></li>
+                                        <li><em>|</em><a href="http://www.law380.com/gywm/">关于我们</a></li>
+                                                        </ul>
+            </div>
+        </div><div class="fullSlide">
+    <div class="bd">
+        <ul>
+            <li alt= "深圳追债网" style="background:url(http://www.law380.com/skins/images/wycms/banner1.jpg)  center 0 no-repeat;">
+
+            </li>
+            <li alt= "深圳供应链金融律师" style="background:url(http://www.law380.com/skins/images/wycms/banner2.jpg)  center 0 no-repeat;">
+
+            </li>
+            <li alt= "深圳债务追讨律师" style="background:url(http://www.law380.com/skins/images/wycms/banner3.jpg)  center 0 no-repeat;">		
+
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="hd"><ul></ul></div>
+
+    <script type="text/javascript">
+        jQuery(".fullSlide").slide({titCell: ".hd ul", mainCell: ".bd ul", effect: "topLoop", autoPlay: true, autoPage: true, trigger: "click"});
+    </script>
 
 </div>
-<div class="row">
-  <!-- <div class="col-sm-12">
-</div> -->
 
-<!-- 版块内容 -->
+<div class="bussness">
+    <div class="bus_hd">
+        <h3>业务专长</h3>
+        <em>EXPERTISE</em>
+    </div>
+
+    <div class="bus_bd cl">
+        <ul>
+                                    <li>
+                <a href="http://www.law380.com/gyljr/">
+                    <img src="http://www.law380.com/skins/images/wycms/icon1.jpg" />
+                    <p>供应链金融</p>
+                </a>
+            </li>
+                        <li>
+                <a href="http://www.law380.com/hlwjr/">
+                    <img src="http://www.law380.com/skins/images/wycms/icon2.jpg" />
+                    <p>互联网金融</p>
+                </a>
+            </li>
+                        <li>
+                <a href="http://www.law380.com/mjjd/">
+                    <img src="http://www.law380.com/skins/images/wycms/icon3.jpg" />
+                    <p>民间借贷</p>
+                </a>
+            </li>
+                        <li>
+                <a href="http://www.law380.com/qyzkqs/">
+                    <img src="http://www.law380.com/skins/images/wycms/icon4.jpg" />
+                    <p>企业账款清收</p>
+                </a>
+            </li>
+                        <li>
+                <a href="http://www.law380.com/yhzwqs/">
+                    <img src="http://www.law380.com/skins/images/wycms/icon5.jpg" />
+                    <p>银行债务清收</p>
+                </a>
+            </li>
+                        <li>
+                <a href="http://www.law380.com/gjzwqs/">
+                    <img src="http://www.law380.com/skins/images/wycms/icon6.jpg" />
+                    <p>国际债务清收</p>
+                </a>
+            </li>
+                        <li>
+                <a href="http://www.law380.com/fszwqs/">
+                    <img src="http://www.law380.com/skins/images/wycms/icon7.jpg" />
+                    <p>非诉债务清收</p>
+                </a>
+            </li>
+                        <li>
+                <a href="http://www.law380.com/zxajdl/">
+                    <img src="http://www.law380.com/skins/images/wycms/icon8.jpg" />
+                    <p>执行案件代理</p>
+                </a>
+            </li>
+                                </ul>
+    </div>
+</div>
+
+<div class="content_bg">
+    <div class="content cl ">
+        <div class="counsel">
+            <div class="counsel_hd">
+                <div class="counsel_hdt">
+                    <h3><a href="http://www.law380.com/sxls/">首席律师</a></h3>
+                    <em>Chief Counsel</em>
+                </div>
+                <div class="line"></div>
+                <div class="counsel_hdb">
+                                                            <p>
+
+ 
+　   李源律师系北京市盈科律师事务所合伙人律师，盈科所债权债务纠纷团队领头人。他带领团队成员都有多年大型企业风险管理经验，熟悉公司治理、股权激励、知识产权、合同与客户管理等企业法律风险防范。熟悉深圳及外地追债情况，针对全国各地欠、骗...<a href="http://www.law380.com/sxls/" target="_blank">MORE >></a></p>
+                                                        </div>
+
+            </div>
+
+            <div class="counsel_bd cl">
+                <div class="counsel_bdt">
+                    <h3><a href="http://www.law380.com/zytd/#mao_jyls">精英团队</a></h3>
+                    <em>Elite team</em>
+                    <div class="line"></div>
+                </div>
+
+                <div class="counsel_bdl">
+                    <ul>
+                                                                        <li><a href="http://www.law380.com/2016/jytd_0803/10.html" target="_blank"> <img style="width: 80px;height: 80px;" src="http://www.law380.com/uploadfile/2016/0804/20160804094959239.jpg" /></a></li>
+                                                <li><a href="http://www.law380.com/2016/jytd_0803/5.html" target="_blank"> <img style="width: 80px;height: 80px;" src="http://www.law380.com/uploadfile/2016/0804/20160804093325614.png" /></a></li>
+                                                                        <li><a href="http://www.law380.com/zytd/#mao_jyls"> <img src="http://www.law380.com/skins/images/wycms/more.jpg" /></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="midimg">
+     <img alt="深圳债权债务律师李源" src="http://www.law380.com/skins/images/wycms/lawer_img.jpg" />
+    </div>
+        <div class="cases">
+            <div class="cases_hd">
+                <h3><a href="http://www.law380.com/qbaj/#mao_cgal">成功案例</a></h3><span class="fr" style="color:#fff;"><a href="http://www.law380.com/qbaj/#mao_cgal">MORE >></a></span>
+                <em>SUCCESS CASES </em>
+                <div class="line"></div>
+            </div>
+
+            <div class="cases_bd">
+                <ul >
+                                                            <li class="cl"><span>17/02/23</span><a href="http://www.law380.com/2017/cgal_0223/1197.html" target="_blank">律师团队为客户追回500万元</a></li>
+                                        <li class="cl"><span>17/01/06</span><a href="http://www.law380.com/2017/cgal_0106/1028.html" target="_blank">为客户避免损失541805元</a></li>
+                                        <li class="cl"><span>17/01/05</span><a href="http://www.law380.com/2017/cgal_0105/1026.html" target="_blank">及时向申请法院查封房产 对方马上...</a></li>
+                                        <li class="cl"><span>16/11/24</span><a href="http://www.law380.com/2016/cgal_1124/810.html" target="_blank">4000万货款失而复得</a></li>
+                                        <li class="cl"><span>16/11/23</span><a href="http://www.law380.com/2016/cgal_1123/809.html" target="_blank">封了欠款人财产、赢了官司，判决就...</a></li>
+                                        <li class="cl"><span>16/11/22</span><a href="http://www.law380.com/2016/cgal_1122/808.html" target="_blank">起诉对方偿还借款280万却得不到法院支持</a></li>
+                                        <li class="cl"><span>16/11/18</span><a href="http://www.law380.com/2016/cgal_1118/741.html" target="_blank">成功帮当事人追回货款本金1400万、...</a></li>
+                                        <li class="cl"><span>16/11/15</span><a href="http://www.law380.com/2016/cgal_1115/740.html" target="_blank">316万仲裁案获胜诉</a></li>
+                                                        </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="knowledge">
+    <div class="know_hd">
+        <h3>债务知识</h3>
+        <em>DEBT KNOWLEDGE</em>
+    </div>
+
+    <div class="know_bd cl">
+                        <div class="know1 ">
+            <div class="know1t">
+                                <span><a href="http://www.law380.com/zwzs/#mao_jdcs">MORE >></a></span> 
+                                <h3>借贷常识</h3>
+            </div>
+            <div class="line"></div>
+            <img src="http://www.law380.com/uploadfile/2016/0906/20160906103708752.jpg" alt="借贷常识" />
+            <ul>
+                                                <li><a href="http://www.law380.com/2017/jdcs_0301/1276.html" target="_blank">债务纠纷起诉需要满足的条件</a></li>
+                                <li><a href="http://www.law380.com/2017/jdcs_0301/1275.html" target="_blank">对于恶意拖欠个人债务要怎么做？</a></li>
+                                <li><a href="http://www.law380.com/2017/jdcs_0301/1274.html" target="_blank">以各种理由拖欠不还，债权人可以怎么做？</a></li>
+                                            </ul>
+        </div>
+                <div class="know1 ">
+            <div class="know1t">
+                                <span><a href="http://www.law380.com/zwzs/#mao_dxal">MORE >></a></span> 
+                                <h3>典型案例</h3>
+            </div>
+            <div class="line"></div>
+            <img src="http://www.law380.com/uploadfile/2016/0809/20160809020027657.jpg" alt="典型案例" />
+            <ul>
+                                                <li><a href="http://www.law380.com/2017/dxal_0301/1265.html" target="_blank">因损害赔偿所贷款是否属于夫妻共同债务？</a></li>
+                                <li><a href="http://www.law380.com/2017/dxal_0301/1259.html" target="_blank">债权转让未通知债务人可以生效吗？</a></li>
+                                <li><a href="http://www.law380.com/2017/dxal_0301/1258.html" target="_blank">没有登记结婚，可主张对方留下的债权的</a></li>
+                                            </ul>
+        </div>
+                <div class="know1 ">
+            <div class="know1t">
+                                <span><a href="http://www.law380.com/zwzs/#mao_zzzn">MORE >></a></span> 
+                                <h3>追债指南</h3>
+            </div>
+            <div class="line"></div>
+            <img src="http://www.law380.com/uploadfile/2016/0809/20160809020211147.jpg" alt="追债指南" />
+            <ul>
+                                                <li><a href="http://www.law380.com/2017/zzzn_0301/1277.html" target="_blank">讨债时要注意哪些问题</a></li>
+                                <li><a href="http://www.law380.com/2017/zzzn_0227/1203.html" target="_blank">怎么向监护人催讨债务</a></li>
+                                <li><a href="http://www.law380.com/2017/zzzn_0226/1199.html" target="_blank">债务人还钱后要怎么做才安全?</a></li>
+                                            </ul>
+        </div>
+                    </div>
+</div>
+
+<div class="lawer_bg">
+    <div class="lawer">
+        <div class="know_hd">
+            <h3>法律资讯</h3>
+            <em>LEGAL  ADVICE</em>
+        </div>
+
+        <div class="know_bd  cl ">
+                                    <div class="know1 ">
+                <div class="know1t">
+                                        <span><a href="http://www.law380.com/flzx/#mao_yjxw">MORE >></a></span> 
+                                        <h3>业界新闻</h3>
+                </div>
+                <div class="line"></div>
+                <img src="http://www.law380.com/uploadfile/2016/0809/20160809021429870.jpg" alt="业界新闻"/>
+                <ul>
+                                                            <li><a href="http://www.law380.com/2017/yjxw_0108/1032.html" target="_blank">天津：股权债权受法律保护</a></li>
+                                        <li><a href="http://www.law380.com/2016/yjxw_1224/977.html" target="_blank">财政部出台专员办监督地方政府债务办法</a></li>
+                                        <li><a href="http://www.law380.com/2016/yjxw_1121/779.html" target="_blank">住房抵押贷款证券化势在必行</a></li>
+                                                        </ul>
+            </div>
+                        <div class="know1 ">
+                <div class="know1t">
+                                        <span><a href="http://www.law380.com/flzx/#mao_xfsd">MORE >></a></span> 
+                                        <h3>新法速递</h3>
+                </div>
+                <div class="line"></div>
+                <img src="http://www.law380.com/uploadfile/2016/0809/20160809021530732.jpg" alt="新法速递"/>
+                <ul>
+                                                            <li><a href="http://www.law380.com/2016/xfsd_0824/125.html" target="_blank">关于民间借贷纠纷案件的裁判指引</a></li>
+                                        <li><a href="http://www.law380.com/2016/xfsd_0804/72.html" target="_blank">非银行支付机构网络支付业务管理办法(20...</a></li>
+                                        <li><a href="http://www.law380.com/2016/xfsd_0804/71.html" target="_blank">互联网金融的监管法规有哪些？</a></li>
+                                                        </ul>
+            </div>
+                        <div class="know1 ">
+                <div class="know1t">
+                                        <span><a href="http://www.law380.com/flzx/#mao_badw">MORE >></a></span> 
+                                        <h3>办案单位</h3>
+                </div>
+                <div class="line"></div>
+                <img src="http://www.law380.com/uploadfile/2016/0809/20160809021605431.jpg" alt="办案单位"/>
+                <ul>
+                                                            <li><a href="http://www.law380.com/2016/badw_0808/115.html" target="_blank">执行局</a></li>
+                                        <li><a href="http://www.law380.com/2016/badw_0804/75.html" target="_blank">法警大队</a></li>
+                                        <li><a href="http://www.law380.com/2016/badw_0804/76.html" target="_blank">司法事务中心</a></li>
+                                                        </ul>
+            </div>
+                                </div>
+    </div>
+</div>
+
+<div class="bottom">
+    <div  class="anthology">
+        <div class="know_hd">
+            <h3>律师文集</h3>
+            <em>LAWYERS  ANTHOLOGY</em>
+        </div>
+
+        <div class="know_bd">
+                                    <div class="know1 ">
+                <div class="know1t">
+                                         <span><a href="http://www.law380.com/lswj/#mao_flws">MORE >></a></span> 
+                                        <h3>法律文书</h3>
+                </div>
+                <div class="line"></div>
+                <img src="http://www.law380.com/uploadfile/2016/0809/20160809021835660.jpg" alt="法律文书" />
+                <ul>
+                                                            <li><a href="http://www.law380.com/2017/flws_0301/1272.html" target="_blank">不属于债务重组的情形</a></li>
+                                        <li><a href="http://www.law380.com/2017/flws_0301/1271.html" target="_blank">法律规定夫妻共同债务不能因离婚而免除</a></li>
+                                        <li><a href="http://www.law380.com/2017/flws_0301/1269.html" target="_blank">债务免除的条件</a></li>
+                                                        </ul>
+            </div>
+                        <div class="know1 ">
+                <div class="know1t">
+                                         <span><a href="http://www.law380.com/lswj/#mao_xswz">MORE >></a></span> 
+                                        <h3>学术文章</h3>
+                </div>
+                <div class="line"></div>
+                <img src="http://www.law380.com/uploadfile/2016/0809/20160809021758504.jpg" alt="学术文章" />
+                <ul>
+                                                            <li><a href="http://www.law380.com/2016/xswz_0804/62.html" target="_blank">欠条和借条哪个法律效力强</a></li>
+                                        <li><a href="http://www.law380.com/2016/xswz_0804/61.html" target="_blank">个人借款合同怎么写？</a></li>
+                                        <li><a href="http://www.law380.com/2016/xswz_0804/60.html" target="_blank">债务纠纷起诉书如何写</a></li>
+                                                        </ul>
+            </div>
+                                         
+        </div>
+    </div>
+
+    <div class="partner">
+        <div class="know_hd">
+            <h3>合作伙伴</h3>
+            <em>PARTNER</em>
+        </div>
+
+        <div class="know_bd">
+            <div class="know1">
+                <div class="know1t">
+                    <span></span><h3>合作伙伴</h3>
+                </div>
+                <div class="line"></div>
+                <img src="http://www.law380.com/uploadfile/2016/0809/20160809021958139.jpg" alt="合作伙伴" />
+                <ul>
+                                                            <li><a href="http://www.law380.com/2016/hzhb_0804/81.html" target="_blank">北京市盈科（深圳）律师事务所</a></li>
+                                        <li><a href="http://www.law380.com/2016/hzhb_0804/80.html" target="_blank">网律互联</a></li>
+                                        <li><a href="http://www.law380.com/2016/hzhb_0804/79.html" target="_blank">深圳刑事辩护网</a></li>
+                                                        </ul>
+            </div>
 
 
-<div class="row featurette">
-	<div class="col-md-7">
-		<h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-		<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-	</div>
-	<div class="col-md-5">
-		<img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" src="__PUBLIC__/image/5.jpg" >
-	</div>
-</div>
-<hr class="featurette-divider">
-</div>
-<div class="row">
-	<div class="col-sm-12">
-	</div>
-	<!-- FOOTER -->
-	<footer>
-		<p class="pull-right"><a href="#">Back to top</a></p>
-		<p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-	</footer>
-	<footer>
-		<p class="pull-right"><a href="#">Back to top</a></p>
-		<p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-	</footer>
-</div>
+        </div>
+    </div>
 </div>
 
-<!-- 底部导航栏 -->
-<!-- <nav class="navbar navbar-default navbar-fixed-bottom">
-	<div class="container">
-		<li><a href="#">Dropdown link</a></li>
-		<li><a href="#">Dropdown link</a></li>
-	</div>
-</nav> -->
-</body>
+<div class="link cl">
+    <div class="lin_hd">
+        <h3>友情链接</h3>
+        <div class="line"></div>
+    </div>
+
+    <div class="lin_bd">
+        <ul class="cl">
+                                    <li><a href="http://www.law113.com/" target="_blank">深圳刑事辩护网</a></li>
+                        <li><a href="http://www.lawyer-of-rich.com/" target="_blank">期货律师</a></li>
+                        <li><a href="http://www.tjjplsw.com " target="_blank">天津房产律师</a></li>
+                        <li><a href="http://www.lvshiyzz.com/" target="_blank">北京刑事律师</a></li>
+                        <li><a href="http://www.huananhunyin.com/" target="_blank">广州离婚律师</a></li>
+                        <li><a href="http://www.huanglelelawyer.com" target="_blank">深圳离婚律师</a></li>
+                        <li><a href="http://www.suewinfc.com/" target="_blank">房产律师咨询</a></li>
+                        <li><a href="http://www.huanglelelawyer.com/" target="_blank">深圳离婚律师</a></li>
+                        <li><a href="http://www.qinaiguo.com/" target="_blank">广州知名律师</a></li>
+                        <li><a href="http://www.suewinhy.com/" target="_blank">离婚律师咨询</a></li>
+                        <li><a href="http://www.kafanglawyer.com/" target="_blank">广州房产律师</a></li>
+                        <li><a href="http://www.guanxinjs.com/" target="_blank">广州婚姻律师</a></li>
+                        <li><a href="http://www.tangxinjie.com/" target="_blank">深圳刑事律师</a></li>
+                        <li><a href="http://www.intelawyer.com/" target="_blank">涉外律师</a></li>
+                        <li><a href="http://www.lihun021.com/" target="_blank">上海离婚律师</a></li>
+                        
+        </ul>
+    </div>
+</div>
+        <div class="footer">
+            <div class="foot cl">
+                <div class="f_l">
+                    <ul>
+                        <li><a href="/">首页</a></li>                                                          
+                        <li><em>|</em><a  onclick="AddFavorite(window.location, document.title)"> 加入收藏</a></li>
+                        <script type="text/javascript" language="javascript">
+						function AddFavorite(title, url) {
+							try {
+								window.external.addFavorite(url, title);
+							} catch (e) {
+								try {
+									window.sidebar.addPanel(title, url, "");
+								} catch (e) {
+									alert("抱歉，您所使用的浏览器无法完成此操作。\n\n加入收藏失败，请使用Ctrl+D进行添加");
+								}
+							}
+						}
+						
+						</script>
+						<li><em>|</em><a href="http://www.law380.com/zytd/">精英团队</a></li>
+                        <li><em>|</em><a href="http://www.law380.com/ask/">在线咨询</a></li>
+                        <li><em>|</em><a href="http://www.law380.com/gywm/">关于我们</a></li>
+                        <li><em>|</em><a href='http://www.law380.com/mzsm/'>版权与免责声明</a></li>
+                    </ul>
+                    <p>投稿  |   合作：877248417@qq.com</p>
+                    <p>联系电话：180-3805-8666</p>
+                    <p>总机号码 : 0755-36866712</p>
+                    <p>联系地址：广东省深圳市福田区益田路6003号荣超商务中心B座3楼 北京市盈科（深圳）律师事务所</p>
+                    <p></p>
+                </div>
+
+                <div class="f_r">
+                    <a href="/"><img  class="fr" src="http://www.law380.com/skins/images/wycms/foot_logo.jpg" alt="深圳追债网" /></a>
+                    <div class="code fr">
+                        <img src="http://www.law380.com/uploadfile/2016/0902/20160902031206602.jpg" alt="李源律师" />
+                    </div>
+                </div>
+            </div>
+            <div class="foot_bot">
+                <div class="foot_b">
+                    <div class="foot_bl">
+                        <p>Copyright © 2016 <a href="/" style="color:white;">www.law380.com</a> All Rights Reserved.版权所有•李源律师团队 <a  target="_blank" href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action" style="color:white;">粤ICP备16069227号-1号   </a><!--<a  target="_blank" href="http://www.lawyermarketing.cn/" style="color:white;">  UED 网律互联</a> <a  target="_blank" href="http://tongji.baidu.com/web/welcome/login" ><img alt="百度统计" src="http://www.law380.com/skins/images/wycms/baidu.jpg" /></a>--></p>
+                    </div>
+                 <!--<div class="foot_br">
+                        <p><a  target="_blank" href="http://www.lawyermarketing.cn/" style="color:white;">技术支持：网律互联</a></p>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+
+        <!--在线客服-->
+        <div class="kfbox fw">
+            <div class="kfpup">
+
+                <div class="kfin">
+
+                    <ul>
+                        <li><a target="_blank"  href="http://wpa.qq.com/msgrd?v=3&uin=877248417&site=qq&menu=yes"><img src="http://www.law380.com/skins/images/wycms/qqicon.png" /><p>QQ在线</p></a></li>
+                        <li><a  href="javascript:void(0)"><img src="http://www.law380.com/skins/images/wycms/phongicon.png" /><p>联系电话<br />
+                                    <em class="phone_font">180-3805-8666</em></p></a></li>
+                        <li><a target="_blank" href="http://www.law380.com/ask/"><img src="http://www.law380.com/skins/images/wycms/messageicon.png" /><p>在线咨询</p></a></li>
+                        <li><a  href="#"><img src="http://www.law380.com/skins/images/wycms/topicon.png" /><p>置顶</p></a></li>
+                    </ul>	
+
+                    <a href="#"><img alt="李源律师" src="http://www.law380.com/uploadfile/2016/0902/20160902031206602.jpg" /></a>
+                </div>
+
+            </div>
+        </div>
+
+        <script type="text/javascript">
+
+            //共用
+            $(".kfbox").hover(function() {
+                $(this).children('.kfpup').stop(true, true).animate({marginRight: 0});
+            }, function() {
+                $(this).children('.kfpup').stop(true, true).animate({marginRight: -160});
+            });
+
+        </script>
+        <script type="text/javascript">
+    var p18 = 2;
+    var num18 = 3;
+    var times18 = 10;
+    $("#more1").click(function() {
+        if (p18 > times18) {
+            $("#more1").html("更多精彩内容切换到电脑版浏览");
+            $("#more1").attr("href", "");
+            return;
+        }
+        var catid = $('#more1').attr('catid');
+        $.post("/index.php?m=content&c=index&a=ajaxList", {catid: catid, page: p18, num: num18}, function(data) {
+            p18 = p18 + 1;
+            eval("var datas=" + data);
+            var img="";
+            var str = "";
+            for (var i = 0; i < datas.length; i++) {
+                var title = datas[i].title.substring(0, 18) + "...";
+                var description = datas[i].description.substring(0, 55) + "...";
+
+                //str += '<li><h3><a href="/show_' + datas[i].catid + '_' + datas[i].id + '.html">' + datas[i].title + '</a></h3>' + '<p>' + description + '<a href="/show_' + datas[i].catid + '_' + datas[i].id + '.html">[ 更多]</a></p></li>';
+                if (i == 0)
+                {
+                    str += '<li class="no">';
+                } else {
+                    str += '<li>';
+                }
+                if(datas[i].thumb)
+                {
+                     img=datas[i].thumb;
+                }else
+                {
+                    img="http://www.law380.com/skins/images/wycms/know1.jpg";
+                }
+                str += '<img src="' + img + '" /><h3><a href="' + datas[i].url + '">' + title + '</a></h3><p>' + description + '</p><div class="about_more cl"><div class="time fl cl"><img class="fl"  src="http://www.law380.com/skins/images/wycms/time_icon.jpg" /><em class="fl" >'+datas[i].inputtime + '</em></div><div class="more fr"><a href="' + datas[i].url + '">More >></a></div></div></li>';
+
+            }
+            $("#news1").append(str);
+            if (datas.length < num18) {
+                $("#more1").css("display", "none");
+            }
+        });
+    });
+</script>
+<script type="text/javascript">
+    var g18 = 2;
+    var gnum18 = 3;
+    var times18 = 10;
+    $("#more2").click(function() {
+        if (g18 > times18) {
+            $("#more2").html("更多精彩内容切换到电脑版浏览");
+            $("#more2").attr("href", "");
+            return;
+        }
+        var catid = $('#more2').attr('catid');
+        $.post("/index.php?m=content&c=index&a=ajaxList", {catid: catid, page: g18, num: gnum18}, function(data) {
+            g18 = g18 + 1;
+            eval("var datas=" + data);
+            var str = "";
+            var img="";
+            for (var i = 0; i < datas.length; i++) {
+                var title = datas[i].title.substring(0, 18) + "...";
+                var description = datas[i].description.substring(0, 55) + "...";
+
+                //str += '<li><h3><a href="/show_' + datas[i].catid + '_' + datas[i].id + '.html">' + datas[i].title + '</a></h3>' + '<p>' + description + '<a href="/show_' + datas[i].catid + '_' + datas[i].id + '.html">[ 更多]</a></p></li>';
+                if (i == 0)
+                {
+                    str += '<li class="no">';
+                } else {
+                    str += '<li>';
+                }
+                 if(datas[i].thumb)
+                {
+                     img=datas[i].thumb;
+                }else
+                {
+                    img="http://www.law380.com/skins/images/wycms/know1.jpg";
+                }
+                str += '<img src="' + img + '" /><h3><a href="' + datas[i].url + '">' + title + '</a></h3><p>' + description + '</p><div class="about_more cl"><div class="time fl cl"><img class="fl"  src="http://www.law380.com/skins/images/wycms/time_icon.jpg" /><em class="fl" >' + datas[i].inputtime + '</em></div><div class="more fr"><a href="' + datas[i].url + '">More >></a></div></div></li>';
+
+            }
+            $("#news2").append(str);
+            if (datas.length < gnum18) {
+                $("#more2").css("display", "none");
+            }
+        });
+    });
+</script>
+<script type="text/javascript">
+    var e18 = 2;
+    var enum18 = 3;
+    var times18 = 10;
+    $("#more3").click(function() {
+        if (e18 > times18) {
+            $("#more3").html("更多精彩内容切换到电脑版浏览");
+            $("#more3").attr("href", "");
+            return;
+        }
+        var catid = $('#more3').attr('catid');
+        $.post("/index.php?m=content&c=index&a=ajaxList", {catid: catid, page: e18, num: enum18}, function(data) {
+            e18 = e18 + 1;
+            eval("var datas=" + data);
+            var str = "";
+			var img="";
+            for (var i = 0; i < datas.length; i++) {
+                var title = datas[i].title.substring(0, 18) + "...";
+                var description = datas[i].description.substring(0, 55) + "...";
+
+                //str += '<li><h3><a href="/show_' + datas[i].catid + '_' + datas[i].id + '.html">' + datas[i].title + '</a></h3>' + '<p>' + description + '<a href="/show_' + datas[i].catid + '_' + datas[i].id + '.html">[ 更多]</a></p></li>';
+                if (i == 0)
+                {
+                    str += '<li class="no">';
+                } else {
+                    str += '<li>';
+                }
+				 if(datas[i].thumb)
+                {
+                     img=datas[i].thumb;
+                }else
+                {
+                    img="http://www.law380.com/skins/images/wycms/know1.jpg";
+                }
+                str += '<img src="' + img + '" /><h3><a href="' + datas[i].url + '">' + title + '</a></h3><p>' + description + '</p><div class="about_more cl"><div class="time fl cl"><img class="fl"  src="http://www.law380.com/skins/images/wycms/time_icon.jpg" /><em class="fl" >' + datas[i].inputtime + '</em></div><div class="more fr"><a href="' + datas[i].url + '">More >></a></div></div></li>';
+
+            }
+            $("#news3").append(str);
+            if (datas.length < enum18) {
+                $("#more3").css("display", "none");
+            }
+        });
+    });
+</script>
+<script type="text/javascript">
+    var p18 = 2;
+    var pnum18 = 5;
+    var times18 = 10;
+    $("#more23").click(function() {
+        if (p18 > times18) {
+            $("#more23").html("更多精彩内容切换到电脑版浏览");
+            $("#more23").attr("href", "");
+            return;
+        }
+        var catid = $('#more23').attr('catid');
+        $.post("/index.php?m=content&c=index&a=ajaxList", {catid: catid, page: p18, num: pnum18}, function(data) {
+            p18 = p18 + 1;
+            eval("var datas=" + data);
+            var str = "";
+            var img="";
+            for (var i = 0; i < datas.length; i++) {
+                var title = datas[i].title.substring(0, 18) + "...";
+                var description = datas[i].description.substring(0, 55) + "...";
+				str +='<li><span>' + datas[i].inputtime + '</span><a href="' + datas[i].url + '">'+title+' </a></li>';
+            }
+            $("#news23").append(str);
+            if (datas.length < pnum18) {
+                $("#more23").css("display", "none");
+            }
+        });
+    });
+</script>
+<script type="text/javascript" src="http://www.law380.com/skins/js/Validform_v5.3.2.js"></script>
+<script type="text/javascript">
+
+    $(function() {
+
+        var demo = $("#myform").Validform({
+            tiptype: function(msg, o, cssctl) {
+
+                var objtip = $("#msgdemo");
+                cssctl(objtip, o.type);
+                objtip.text(msg);
+            },
+            ajaxPost: true, //AJAX请求
+
+            btnSubmit: "#submitform",
+            btnReset: "#btn_reset",
+            callback: function(data) { //AJAX请求的回调函数
+
+                if (data.status == "SUCCESS") {
+
+                    $('#msgdemo').html(" ");
+                    location.href = "http://www.law380.com/post_success";
+                } else {
+
+                    $('#msgdemo').html("<font color='red'>" + data.message + "</font>");
+                    return false;
+                }
+
+            }
+
+        });
+        demo.addRule([{
+                ele: "#title",
+                datatype: "*1-40",
+                tip: "",
+                nullmsg: "标题不能为空",
+                errormsg: "请输入标题"
+
+            }, {
+                ele: "#name",
+                datatype: "*1-8",
+                tip: "",
+                nullmsg: "姓名不能为空",
+                errormsg: "姓名在1-8个字符之间"
+
+            }, {
+                ele: "#tel",
+                tip: "",
+                datatype: "/^0{0,1}(13[0-9]|15[5-9]|15[0-3]|147|180|182|18[5-9])[0-9]{8}$/",
+                nullmsg: "请输入手机号码",
+                errormsg: "手机号码不正确"
+
+            }, {
+                ele: "#introduce",
+                datatype: "*6-1000",
+                tip: "",
+                nullmsg: "咨询内容不能为空",
+                errormsg: "咨询内容在6-1000个字之间"
+
+            }, {
+                ele: "#code",
+                tip: "",
+                datatype: "/^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]$/",
+                nullmsg: "请输入验证码",
+                errormsg: "请正确输入验证码"
+
+            }]);
+    });</script>
+<script>if (!window._bd_share_config) 
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"32"},"slide":{"type":"slide","bdImg":"0","bdPos":"left","bdTop":"130.5"},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?299d5774c9fa0896ac1d4c08c66ebb4f";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    </body>
 </html>

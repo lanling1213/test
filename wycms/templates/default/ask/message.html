@@ -1,0 +1,40 @@
+{php $SITEINFO = siteinfo($siteid);$sitename = $SITEINFO['name'];$SITEINFO = string2array($SITEINFO['infos']);}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>深圳盈科律师网-李源律师</title>
+</head>
+<link href="{CSS_PATH}style.css" rel="stylesheet">
+<script type="text/javascript" src="{JS_PATH}jquery1.42.min.js"></script>
+<script type="text/javascript" src="{JS_PATH}jquery.SuperSlide.2.1.js"></script>
+
+<body>
+
+<!--透明背景-->
+<div class="pup-box">
+    <p class="tc">您的问题已经成功提交，<strong>深圳追债网</strong>会第一时间回复，如果您的问题比较紧急，可以直接给律师打电话：<em>180-3805-8666</em></p>
+    <div class="tc pup-box-btn">        	
+        <a href="/">返回首页</a>
+        <a href="{$CATEGORYS[35]['url']}" class="continue">继续提问</a>
+    </div>
+    <div class="tc s-return"><em><span class="fines" id="times">5</span>秒后自动返回</em></div>	
+    <script type="text/javascript">
+        var start = 5; //设置起始秒数
+        var r; //定时器
+        window.onload = function() {
+            r = setInterval("reload_page()", 1000); //定时器
+        }
+
+        function reload_page() {
+            if (start == 0) {
+                clearInterval(r);
+                window.location.href = "{$CATEGORYS[35]['url']}";
+            }
+            document.getElementById("times").innerHTML = start;
+            start--;
+        }
+    </script>
+</div>
+</body>
+</html>

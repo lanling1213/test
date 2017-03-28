@@ -1,0 +1,30 @@
+{template "content","header","wycms"}
+<script type="text/javascript">
+var start = 3;  //设置起始秒数
+var r;          //定时器
+window.onload = function(){
+	r = setInterval("reload_page()",1000);   //定时器
+}
+function reload_page(){
+	if(start==0) {
+		clearInterval(r);
+		window.history.go(-1);
+	}
+	document.getElementById("times").innerHTML = start+"秒后自动返回";
+	start--;
+}
+</script>
+<div class="space"></div>
+
+<div class="zx_tj w940">
+	<div class="zx_tj_c">
+    	<p class="cf00">验证码输入错误！</p>
+        <div class="space"></div>
+        <div class="zx_tj_but"><a href="{APP_PATH}">返回首页</a><a href="javascript:history.go(-1)">返回</a></div>
+        <div class="space"></div>
+        <span id="times">3秒后自动返回</span>
+    </div>	
+</div>
+
+<div class="space"></div>
+{template "content","footer","wycms"}

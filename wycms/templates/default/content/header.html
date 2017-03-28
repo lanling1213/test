@@ -1,0 +1,85 @@
+﻿{php $SITEINFO = siteinfo($siteid);$sitename = $SITEINFO['name'];$SITEINFO = string2array($SITEINFO['infos']);}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta name="location" content="province=广东;city=深圳"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{if $catname}{$catname}-{if isset($page)&&$page>1}第{$page}页-{/if}{elseif $title && $_GET['m']!='ask'}{$title}-{if isset($page)&&$page>1}第{$page}页-{/if}{elseif $_GET['m']=='ask' && $_GET[a]=='lists'}在线咨询-{if isset($page)&&$page>1}第{$page}页-{/if}深圳追债网{elseif $_GET['m']=='ask' &&$_GET[a]=='show'}{str_cut($content,90,false)}-深圳追债网{else}深圳债权债务律师|深圳经济纠纷律师|深圳追债律师|深圳收债律师-深圳追债网{/if}{if $catid=="" && $CAT[parentid]==0}{else}深圳追债网{/if}</title> 
+        <meta name="keywords" content="{if $catname&&!isset($id)}{$catname}{elseif $title&&isset($id)}{$rs[keywords]},{$CAT[catname]},{$title}{else}深圳债权债务律师,深圳经济纠纷律师,深圳追债律师,深圳收债律师,深圳追债网{/if}"/>
+        <meta name="description" content="{if $title&&isset($id)}{$rs[description]}{elseif $catid==""&&$_GET[m]=='content'}深圳追债网{$CAT[catname]}栏目为您提供{$CAT[catname]}相关法律知识和内容，如果还需要更多的、专业的{$CAT[catname]}知识，可咨询深圳追债律师李源律师，咨询热线：{$SITEINFO['tel']}{elseif $_GET['m']=='ask' && $_GET[a]=='lists'}在线咨询-深圳追债网{elseif $_GET['m']=='ask' && $_GET[a]=='show'}{$content}{else}深圳追债网是由深圳李源律师创建,擅长民间借贷,债务清收,执行案件代理,互联网金融,供应链金融,债务纠纷等法律事务,咨询热线：{$SITEINFO['mobile']} | {$SITEINFO['tel']}。{/if}"/>
+
+</head>
+<link href="{CSS_PATH}style.css" rel="stylesheet">
+    <script type="text/javascript" src="{JS_PATH}jquery1.42.min.js"></script>
+    <script type="text/javascript" src="{JS_PATH}jquery.SuperSlide.2.1.js"></script>
+     <SCRIPT LANGUAGE="JavaScript">
+    function mobile_device_detect(url)
+    {
+
+            var thisOS=navigator.platform;
+
+            var os=new Array("iPhone","iPod","iPad","android","Nokia","SymbianOS","Symbian","Windows Phone","Phone","Linux armv71","MAUI","UNTRUSTED/1.0","Windows CE","BlackBerry","IEMobile");
+
+     for(var i=0;i<os.length;i++)
+            {
+
+     if(thisOS.match(os[i]))
+            {   
+      window.location=url;
+     }
+      
+     }
+
+
+     //因为相当部分的手机系统不知道信息,这里是做临时性特殊辨认
+     if(navigator.platform.indexOf('iPad') != -1)
+            {
+      window.location=url;
+     }
+
+     //做这一部分是因为Android手机的内核也是Linux
+     //但是navigator.platform显示信息不尽相同情况繁多,因此从浏览器下手，即用navigator.appVersion信息做判断
+      var check = navigator.appVersion;
+
+      if( check.match(/linux/i) )
+              {
+       //X11是UC浏览器的平台 ，如果有其他特殊浏览器也可以附加上条件
+       if(check.match(/mobile/i) || check.match(/X11/i))
+                     {
+       window.location=url;
+       }  
+     }
+
+     //类in_array函数
+     Array.prototype.in_array = function(e)
+     {
+      for(i=0;i<this.length;i++)
+      {
+       if(this[i] == e)
+       return true;
+      }
+      return false;
+     }
+    } 
+
+    mobile_device_detect("http://m.law380.com/");
+
+    </SCRIPT>
+    <body onload="mobile_device_detect('http://m.law380.com/')">
+
+        <div class="header">
+            <div class="logo fl">
+                <a href="/"><img src="{IMG_PATH}wycms/logo.jpg" alt="深圳追债网" /></a>
+            </div>
+
+            <div class="nav fr">
+                <ul class="cl">
+                    <li><a href="/">首页</a></li>
+                    {wy:content action="category" catid="0" num="7" return="data"}
+                    {loop $data $r}
+                    <li><em>|</em><a href="{if $r[catid]==2}{$CATEGORYS[12][url]}{else}{$r['url']}{/if}">{$r['catname']}</a></li>
+                    {/loop}
+                    {/wy}
+                </ul>
+            </div>
+        </div>

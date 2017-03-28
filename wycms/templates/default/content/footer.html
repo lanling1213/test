@@ -1,0 +1,323 @@
+        <div class="footer">
+            <div class="foot cl">
+                <div class="f_l">
+                    <ul>
+                        <li><a href="/">首页</a></li>                                                          
+                        <li><em>|</em><a  onclick="AddFavorite(window.location, document.title)"> 加入收藏</a></li>
+                        <script type="text/javascript" language="javascript">
+						function AddFavorite(title, url) {
+							try {
+								window.external.addFavorite(url, title);
+							} catch (e) {
+								try {
+									window.sidebar.addPanel(title, url, "");
+								} catch (e) {
+									alert("抱歉，您所使用的浏览器无法完成此操作。\n\n加入收藏失败，请使用Ctrl+D进行添加");
+								}
+							}
+						}
+						
+						</script>
+						<li><em>|</em><a href="{$CATEGORYS[1][url]}">精英团队</a></li>
+                        <li><em>|</em><a href="{$CATEGORYS[35][url]}">在线咨询</a></li>
+                        <li><em>|</em><a href="{$CATEGORYS[7][url]}">关于我们</a></li>
+                        <li><em>|</em><a href='{$CATEGORYS[36][url]}'>版权与免责声明</a></li>
+                    </ul>
+                    <p>投稿  |   合作：{$SITEINFO['email']}</p>
+                    <p>联系电话：{$SITEINFO['mobile']}</p>
+                    <p>总机号码 : {$SITEINFO['tel']}</p>
+                    <p>联系地址：{$SITEINFO['address']}</p>
+                    <p>{$SITEINFO['company']}</p>
+                </div>
+
+                <div class="f_r">
+                    <a href="/"><img  class="fr" src="{IMG_PATH}wycms/foot_logo.jpg" alt="深圳追债网" /></a>
+                    <div class="code fr">
+                        <img src="{$SITEINFO['weixin_img']}" alt="李源律师" />
+                    </div>
+                </div>
+            </div>
+            <div class="foot_bot">
+                <div class="foot_b">
+                    <div class="foot_bl">
+                        <p>Copyright © 2016 <a href="/" style="color:white;">www.law380.com</a> All Rights Reserved.版权所有•李源律师团队 <a  target="_blank" href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action" style="color:white;">粤ICP备16069227号-1号   </a><!--<a  target="_blank" href="http://www.lawyermarketing.cn/" style="color:white;">  UED 网律互联</a> <a  target="_blank" href="http://tongji.baidu.com/web/welcome/login" ><img alt="百度统计" src="{IMG_PATH}wycms/baidu.jpg" /></a>--></p>
+                    </div>
+                 <!--<div class="foot_br">
+                        <p><a  target="_blank" href="http://www.lawyermarketing.cn/" style="color:white;">技术支持：网律互联</a></p>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+
+        <!--在线客服-->
+        <div class="kfbox fw">
+            <div class="kfpup">
+
+                <div class="kfin">
+
+                    <ul>
+                        <li><a target="_blank"  href="http://wpa.qq.com/msgrd?v=3&uin={$SITEINFO['qq']}&site=qq&menu=yes"><img src="{IMG_PATH}wycms/qqicon.png" /><p>QQ在线</p></a></li>
+                        <li><a  href="javascript:void(0)"><img src="{IMG_PATH}wycms/phongicon.png" /><p>联系电话<br />
+                                    <em class="phone_font">{$SITEINFO['mobile']}</em></p></a></li>
+                        <li><a target="_blank" href="{$CATEGORYS[35][url]}"><img src="{IMG_PATH}wycms/messageicon.png" /><p>在线咨询</p></a></li>
+                        <li><a  href="#"><img src="{IMG_PATH}wycms/topicon.png" /><p>置顶</p></a></li>
+                    </ul>	
+
+                    <a href="#"><img alt="李源律师" src="{$SITEINFO['weixin_img']}" /></a>
+                </div>
+
+            </div>
+        </div>
+
+        <script type="text/javascript">
+
+            //共用
+            $(".kfbox").hover(function() {
+                $(this).children('.kfpup').stop(true, true).animate({marginRight: 0});
+            }, function() {
+                $(this).children('.kfpup').stop(true, true).animate({marginRight: -160});
+            });
+
+        </script>
+        <script type="text/javascript">
+    var p18 = 2;
+    var num18 = 3;
+    var times18 = 10;
+    $("#more1").click(function() {
+        if (p18 > times18) {
+            $("#more1").html("更多精彩内容切换到电脑版浏览");
+            $("#more1").attr("href", "{$CATEGORYS[$catid][url]}");
+            return;
+        }
+        var catid = $('#more1').attr('catid');
+        $.post("/index.php?m=content&c=index&a=ajaxList", {catid: catid, page: p18, num: num18}, function(data) {
+            p18 = p18 + 1;
+            eval("var datas=" + data);
+            var img="";
+            var str = "";
+            for (var i = 0; i < datas.length; i++) {
+                var title = datas[i].title.substring(0, 18) + "...";
+                var description = datas[i].description.substring(0, 55) + "...";
+
+                //str += '<li><h3><a href="/show_' + datas[i].catid + '_' + datas[i].id + '.html">' + datas[i].title + '</a></h3>' + '<p>' + description + '<a href="/show_' + datas[i].catid + '_' + datas[i].id + '.html">[ 更多]</a></p></li>';
+                if (i == 0)
+                {
+                    str += '<li class="no">';
+                } else {
+                    str += '<li>';
+                }
+                if(datas[i].thumb)
+                {
+                     img=datas[i].thumb;
+                }else
+                {
+                    img="http://www.law380.com/skins/images/wycms/know1.jpg";
+                }
+                str += '<img src="' + img + '" /><h3><a href="' + datas[i].url + '">' + title + '</a></h3><p>' + description + '</p><div class="about_more cl"><div class="time fl cl"><img class="fl"  src="{IMG_PATH}wycms/time_icon.jpg" /><em class="fl" >'+datas[i].inputtime + '</em></div><div class="more fr"><a href="' + datas[i].url + '">More >></a></div></div></li>';
+
+            }
+            $("#news1").append(str);
+            if (datas.length < num18) {
+                $("#more1").css("display", "none");
+            }
+        });
+    });
+</script>
+<script type="text/javascript">
+    var g18 = 2;
+    var gnum18 = 3;
+    var times18 = 10;
+    $("#more2").click(function() {
+        if (g18 > times18) {
+            $("#more2").html("更多精彩内容切换到电脑版浏览");
+            $("#more2").attr("href", "{$CATEGORYS[$catid][url]}");
+            return;
+        }
+        var catid = $('#more2').attr('catid');
+        $.post("/index.php?m=content&c=index&a=ajaxList", {catid: catid, page: g18, num: gnum18}, function(data) {
+            g18 = g18 + 1;
+            eval("var datas=" + data);
+            var str = "";
+            var img="";
+            for (var i = 0; i < datas.length; i++) {
+                var title = datas[i].title.substring(0, 18) + "...";
+                var description = datas[i].description.substring(0, 55) + "...";
+
+                //str += '<li><h3><a href="/show_' + datas[i].catid + '_' + datas[i].id + '.html">' + datas[i].title + '</a></h3>' + '<p>' + description + '<a href="/show_' + datas[i].catid + '_' + datas[i].id + '.html">[ 更多]</a></p></li>';
+                if (i == 0)
+                {
+                    str += '<li class="no">';
+                } else {
+                    str += '<li>';
+                }
+                 if(datas[i].thumb)
+                {
+                     img=datas[i].thumb;
+                }else
+                {
+                    img="http://www.law380.com/skins/images/wycms/know1.jpg";
+                }
+                str += '<img src="' + img + '" /><h3><a href="' + datas[i].url + '">' + title + '</a></h3><p>' + description + '</p><div class="about_more cl"><div class="time fl cl"><img class="fl"  src="{IMG_PATH}wycms/time_icon.jpg" /><em class="fl" >' + datas[i].inputtime + '</em></div><div class="more fr"><a href="' + datas[i].url + '">More >></a></div></div></li>';
+
+            }
+            $("#news2").append(str);
+            if (datas.length < gnum18) {
+                $("#more2").css("display", "none");
+            }
+        });
+    });
+</script>
+<script type="text/javascript">
+    var e18 = 2;
+    var enum18 = 3;
+    var times18 = 10;
+    $("#more3").click(function() {
+        if (e18 > times18) {
+            $("#more3").html("更多精彩内容切换到电脑版浏览");
+            $("#more3").attr("href", "{$CATEGORYS[$catid][url]}");
+            return;
+        }
+        var catid = $('#more3').attr('catid');
+        $.post("/index.php?m=content&c=index&a=ajaxList", {catid: catid, page: e18, num: enum18}, function(data) {
+            e18 = e18 + 1;
+            eval("var datas=" + data);
+            var str = "";
+			var img="";
+            for (var i = 0; i < datas.length; i++) {
+                var title = datas[i].title.substring(0, 18) + "...";
+                var description = datas[i].description.substring(0, 55) + "...";
+
+                //str += '<li><h3><a href="/show_' + datas[i].catid + '_' + datas[i].id + '.html">' + datas[i].title + '</a></h3>' + '<p>' + description + '<a href="/show_' + datas[i].catid + '_' + datas[i].id + '.html">[ 更多]</a></p></li>';
+                if (i == 0)
+                {
+                    str += '<li class="no">';
+                } else {
+                    str += '<li>';
+                }
+				 if(datas[i].thumb)
+                {
+                     img=datas[i].thumb;
+                }else
+                {
+                    img="http://www.law380.com/skins/images/wycms/know1.jpg";
+                }
+                str += '<img src="' + img + '" /><h3><a href="' + datas[i].url + '">' + title + '</a></h3><p>' + description + '</p><div class="about_more cl"><div class="time fl cl"><img class="fl"  src="{IMG_PATH}wycms/time_icon.jpg" /><em class="fl" >' + datas[i].inputtime + '</em></div><div class="more fr"><a href="' + datas[i].url + '">More >></a></div></div></li>';
+
+            }
+            $("#news3").append(str);
+            if (datas.length < enum18) {
+                $("#more3").css("display", "none");
+            }
+        });
+    });
+</script>
+<script type="text/javascript">
+    var p18 = 2;
+    var pnum18 = 5;
+    var times18 = 10;
+    $("#more23").click(function() {
+        if (p18 > times18) {
+            $("#more23").html("更多精彩内容切换到电脑版浏览");
+            $("#more23").attr("href", "{$CATEGORYS[$catid][url]}");
+            return;
+        }
+        var catid = $('#more23').attr('catid');
+        $.post("/index.php?m=content&c=index&a=ajaxList", {catid: catid, page: p18, num: pnum18}, function(data) {
+            p18 = p18 + 1;
+            eval("var datas=" + data);
+            var str = "";
+            var img="";
+            for (var i = 0; i < datas.length; i++) {
+                var title = datas[i].title.substring(0, 18) + "...";
+                var description = datas[i].description.substring(0, 55) + "...";
+				str +='<li><span>' + datas[i].inputtime + '</span><a href="' + datas[i].url + '">'+title+' </a></li>';
+            }
+            $("#news23").append(str);
+            if (datas.length < pnum18) {
+                $("#more23").css("display", "none");
+            }
+        });
+    });
+</script>
+<script type="text/javascript" src="{JS_PATH}Validform_v5.3.2.js"></script>
+<script type="text/javascript">
+
+    $(function() {
+
+        var demo = $("#myform").Validform({
+            tiptype: function(msg, o, cssctl) {
+
+                var objtip = $("#msgdemo");
+                cssctl(objtip, o.type);
+                objtip.text(msg);
+            },
+            ajaxPost: true, //AJAX请求
+
+            btnSubmit: "#submitform",
+            btnReset: "#btn_reset",
+            callback: function(data) { //AJAX请求的回调函数
+
+                if (data.status == "SUCCESS") {
+
+                    $('#msgdemo').html(" ");
+                    location.href = "{APP_PATH}post_success";
+                } else {
+
+                    $('#msgdemo').html("<font color='red'>" + data.message + "</font>");
+                    return false;
+                }
+
+            }
+
+        });
+        demo.addRule([{
+                ele: "#title",
+                datatype: "*1-40",
+                tip: "",
+                nullmsg: "标题不能为空",
+                errormsg: "请输入标题"
+
+            }, {
+                ele: "#name",
+                datatype: "*1-8",
+                tip: "",
+                nullmsg: "姓名不能为空",
+                errormsg: "姓名在1-8个字符之间"
+
+            }, {
+                ele: "#tel",
+                tip: "",
+                datatype: "/^0{0,1}(13[0-9]|15[5-9]|15[0-3]|147|180|182|18[5-9])[0-9]{8}$/",
+                nullmsg: "请输入手机号码",
+                errormsg: "手机号码不正确"
+
+            }, {
+                ele: "#introduce",
+                datatype: "*6-1000",
+                tip: "",
+                nullmsg: "咨询内容不能为空",
+                errormsg: "咨询内容在6-1000个字之间"
+
+            }, {
+                ele: "#code",
+                tip: "",
+                datatype: "/^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]$/",
+                nullmsg: "请输入验证码",
+                errormsg: "请正确输入验证码"
+
+            }]);
+    });</script>
+<script>if (!window._bd_share_config) 
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"32"},"slide":{"type":"slide","bdImg":"0","bdPos":"left","bdTop":"130.5"},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?299d5774c9fa0896ac1d4c08c66ebb4f";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    </body>
+</html>

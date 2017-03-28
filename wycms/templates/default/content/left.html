@@ -1,0 +1,112 @@
+    <div class="sideleft fl">
+    	<div class="side-lawyer-intro">
+        	<div class="sideleft-h"><h2>首席律师</h2></div>
+            <div class="side-lawyer-intro-c">
+                <img class="fl" src="{$CATEGORYS[88]['image']}" title="内蒙古陈瑞律师，手机{$SITEINFO['mobile']}" alt="呼和浩特律师网" />
+                <h3>陈瑞律师</h3>
+                <p>{wy:get sql="select * from wy_page where catid=88" num="1"}
+                    {loop $data $val}
+                    {str_cut(strip_tags($val[content]),"300","...")}
+                    {/loop}
+                    {/wy}<a href="{$CATEGORYS[88]['url']}">详细>></a></p>
+            </div>
+        </div>
+        <div class="brand-service">
+        	<div class="sideleft-h"><h2>品牌服务</h2></div>
+            <div class="brand-service-c">
+            	<ul>
+                	<li><a href="{$CATEGORYS['12'][url]}">房产土地</a></li>
+                	<li><a href="{$CATEGORYS['13'][url]}">建筑工程</a></li>
+                    <li><a href="{$CATEGORYS['14'][url]}">合同事务</a></li>
+                    <li><a href="{$CATEGORYS['15'][url]}">融资与并购</a></li>
+                    <li><a href="{$CATEGORYS['16'][url]}">公司法务</a></li>
+
+                </ul>
+            </div>
+        </div>
+        {if $catid!=95}
+        <div class="space"></div>
+        <div class="online-consult">
+        	<div class="sideleft-h"><h2>在线咨询</h2></div>
+            <div class="online-consult-c">
+                <script type="text/javascript">
+                    $(function() {
+                        var demo = $("#myform").Validform({
+                            tiptype: function(msg, o, cssctl) {
+                                var objtip = $("#msgdemo");
+                                cssctl(objtip, o.type);
+                                objtip.text(msg);
+                            },
+                            ajaxPost: true, //AJAX请求
+                            btnSubmit:"#submitform",
+                            callback: function(data) {        //AJAX请求的回调函数
+                                if (data.status == 'y' && data.info == 'code_error') {
+                                    $('#msgdemo').html("<font color='red'>验证码错误</font>");
+                                    return false;
+                                } else {
+                                    $('#msgdemo').html(" ");
+                                    location.href = "{APP_PATH}post_success";
+                                }
+                            }
+                        });
+                        demo.addRule([
+                            {
+                                ele: "#name",
+                                datatype: "*1-8",
+                                value: "姓名",
+                                tip: "姓名",
+                                nullmsg: "请输入姓名",
+                                errormsg: "姓名在1-8个字符之间"
+                            },
+                            {
+                                ele: "#tel",
+                                datatype: "/^0{0,1}(13[0-9]|15[7-9]|153|156|18[7-9])[0-9]{8}$/",
+                                value: "电话",
+                                tip: "电话",
+                                nullmsg: "请输入手机号码",
+                                errormsg: "手机号码不正确"
+                            },
+                            {
+                                ele: "#introduce",
+                                datatype: "*6-1000",
+                                tip:"请输入案件详情",
+                                nullmsg: "请输入咨询内容",
+                                errormsg: "咨询内容在6-1000个字之间"
+                            },
+                            {
+                                ele: "#code",
+                                datatype: "/^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]$/",
+                                value: "验证码",
+                                tip: "验证码",
+                                nullmsg: "请输入输入验证码"                
+                            }
+                        ]);
+                    });
+                </script>
+            	<form action="/ask/" method="post" enctype="application/x-www-form-urlencoded" id="myform">
+                    <p class="txt"><input name="name" id="name" type="text" ></p>
+                    <p class="txt"><input name="tel" id="tel" type="text" ></p>
+                    <p class="txt"><textarea name="introduce" id="introduce" cols="" rows="">请输入案件详情</textarea></p>
+                    <p class="yzm"><input class="fl" name="code" id="code" type="text" >{form::checkcode('code_img','4','14',102,29)}</p>
+                    <div class="cl"></div>
+                    <div class="sidetip" id="msgdemo"></div>
+                    <div class="cl"></div>
+                <div class="consult-but"><input name="" id="submitform" type="button" value="提交" /></div>
+                </form>
+            </div>
+        </div>
+        {/if}
+        <div class="space"></div>
+        <div class="side-news">
+        	<div class="sideleft-h"><h2>最新法律知识</h2></div>
+            <div class="side-news-list">
+            	<ul>
+                    {wy:get sql="select url,title from wy_news order by listorder DESC,inputtime DESC" num="8" return="data"}
+                    {loop $data $r}
+                    <li><a href="{$r[url]}" title="{htmlspecialchars($r['title'])}">{str_cut(strip_tags($r['title']),"56","")}</a></li>
+                    {/loop}
+                    {/wy}
+                </ul>
+            </div>
+        </div>
+    </div>

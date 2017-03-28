@@ -1,0 +1,34 @@
+
+
+
+                {loop $setting $k $v}
+                 <i class="iconfont" id="n{$k}" name="n" onclick="vote({$k})" {if isset($key) && $key==$k} checked{/if}>
+                        <li  class=" fl dianzan">
+                            <label style="color:white;" for="n{$k}" >
+                               ({$data[$v['fields']]})
+                                </label>
+                        </li>
+                        </i>
+                {/loop}
+                
+
+<!--      <li class=" fl dianzan">
+        <input name="ctl00$Main$hdArticleId" type="hidden" id="Main_hdArticleId" value="250184" />
+        <input type="hidden" name="ty" id="ty" value="5" />
+        <div id="Main_zannum" class="t5a" onclick="Javascript:UpdateNum()">0</div>
+      </li>-->
+
+
+<script type="text/javascript">
+function vote(id) {
+	$.getJSON('{APP_PATH}index.php?m=mood&c=index&a=post&id={$mood_id}&k='+id+'&'+Math.random()+'&callback=?', function(data){
+		if(data.status==1)	{
+			
+			$('.iconfont').html(data.data);
+		}else {
+			alert(data.data);
+		}
+	})
+}
+
+</script>                                                           

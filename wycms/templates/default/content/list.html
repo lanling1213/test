@@ -1,0 +1,355 @@
+{template "content","header"}
+{if in_array($catid,array(11,12,13,14,15,16,17,18))}
+<div class="banner">
+    <div class="ban_hd">
+        <h3>业务专长</h3>
+        <em>EXPERTISE</em>
+        <div class="line"></div>
+    </div>
+
+</div>
+<div class="position_bg">
+    <div class="position">
+        <p><em><img src="{IMG_PATH}wycms/posi.jpg" /></em>您现在的位置：<a href="/">首页 </a>>{catpos($catid)}</p>
+    </div>
+</div>
+
+<div class="a_bussness">
+    <div class="bus_bd cl">
+        <ul>
+            {wy:content action="category" catid="2" return="datas"}
+            {loop $datas $r}
+            <li>
+                <a href="{$r['url']}">
+                    <img src="{IMG_PATH}wycms/icon{$n}.jpg" />
+                    <p>{$r[catname]}</p>
+                </a>
+            </li>
+            {/loop}
+            {/wy}
+
+        </ul>
+    </div>
+</div>
+<div class="ab_con cl">
+    <div class="ab_cont">
+
+        <div class="ab_tit cl">
+            <h3 class="fl">{$CATEGORYS[$catid][catname]}</h3>
+            {if $catid==11}
+            <em class="fl">PRIVATE LENDING</em>
+            {elseif $catid==12}
+            <em class="fl">SUPPLY CHAIN FINANCE</em>
+            {elseif $catid==13}
+            <em class="fl">ENTERPRISE PAYMENT COLLECTION</em>
+            {elseif $catid==14}
+            <em class="fl">BANK DEBT COLLECTION</em>
+            {elseif $catid==15}
+            <em class="fl">INTERNATIONAL DEBT COLLECTION</em> 
+            {elseif $catid==16}
+            <em class="fl">ACCUSING THE DEBT COLLECTION</em>
+            {elseif $catid==17}
+            <em class="fl">PERFORM CASE AGENT</em>
+            {elseif $catid==18}
+            <em class="fl">INTERNET FINANCIAL</em>
+            {/if}
+        </div>
+            {if $catid==11}
+            <span><a href="{$CATEGORYS[39]['url']}" class="nMore">更多>></a></span>
+            {elseif $catid==12}
+             <span><a href="{$CATEGORYS[40]['url']}" class="nMore">更多>></a></span>
+            {elseif $catid==13}
+             <span><a href="{$CATEGORYS[41]['url']}" class="nMore">更多>></a></span>
+            {elseif $catid==14}
+             <span><a href="{$CATEGORYS[42]['url']}" class="nMore">更多>></a></span>
+            {elseif $catid==15}
+             <span><a href="{$CATEGORYS[43]['url']}" class="nMore">更多>></a></span>
+            {elseif $catid==16}
+            <span><a href="{$CATEGORYS[44]['url']}" class="nMore">更多>></a></span>
+            {elseif $catid==17}
+             <span><a href="{$CATEGORYS[45]['url']}" class="nMore">更多>></a></span>
+            {elseif $catid==18}
+             <span><a href="{$CATEGORYS[46]['url']}" class="nMore">更多>></a></span>
+            {/if}
+         
+    </div>
+    <div class="bu_conb">
+        <ul>
+            {wy:content action="lists" catid="$catid" num="6" moreinfo="true" page="$page" order="inputtime desc" return="data"}
+            {loop $data $r}
+            <li class="{if $n==1 || $n==4}no{/if}">
+                <img src="{IMG_PATH}lmtp/{$CATEGORYS[$catid][catdir]}_{$n}.jpg" />
+                <h3><a href="{$r['url']}" target="_blank">{str_cut(strip_tags($r['title']),'55','...')}</a></h3>
+                <p>{str_cut(strip_tags($r['description']),'120','...')}</p>
+                <div class="about_more cl">
+                    <div class="time fl cl">
+                        <img class="fl"  src="{IMG_PATH}wycms/time_icon.jpg" />
+                        <em class="fl" >{date('y-m-d',$r['inputtime'])}</em>
+                    </div>
+                    <div class="more fr">
+
+                        <a href="{$r['url']}" target="_blank">More >></a>
+                    </div>
+                </div>
+            </li>
+            {/loop}
+            {/wy}
+        </ul>
+
+        <div class="fanye">
+<!--            <a  class="link" href="#"><</a> <a class="link1" href="#">1</a>  <a href="#">2</a>   <a href="#">3</a>   <a href="#">4</a>   <a href="#">5</a>   <a class="link1" href="#">></a>
+        -->
+       
+        </div>
+    </div>
+</div>
+{elseif in_array($catid,array(39,40,41,42,43,44,45,46))}
+{if $catid==39}
+    {php $cat=11;}
+    {elseif $catid==40}
+    {php $cat=12;}
+     {elseif $catid==41}
+    {php $cat=13;}
+     {elseif $catid==42}
+    {php $cat=14;}
+     {elseif $catid==43}
+    {php $cat=15;}
+     {elseif $catid==44}
+    {php $cat=16;}
+     {elseif $catid==45}
+    {php $cat=17;}
+     {elseif $catid==46}
+    {php $cat=18;}
+{/if}
+<div class="banner">
+ <div class="ban_hd">
+   <h3>{$CATEGORYS[$cat]['catname']}</h3>
+            {if $cat==11}
+            <em>PRIVATE LENDING</em>
+            {elseif $cat==12}
+            <em>SUPPLY CHAIN FINANCE</em>
+            {elseif $cat==13}
+            <em>ENTERPRISE PAYMENT COLLECTION</em>
+            {elseif $cat==14}
+            <em>BANK DEBT COLLECTION</em>
+            {elseif $cat==15}
+            <em>INTERNATIONAL DEBT COLLECTION</em> 
+            {elseif $cat==16}
+            <em>ACCUSING THE DEBT COLLECTION</em>
+            {elseif $cat==17}
+            <em>PERFORM CASE AGENT</em>
+            {elseif $cat==18}
+            <em>INTERNET FINANCIAL</em>
+            {/if}
+   <div class="line"></div>
+ </div>
+</div>
+<div class="position_bg">
+<div class="position">
+   <p><em><img src="{IMG_PATH}wycms/posi.jpg" /></em>您现在的位置：<a href="/">首页 </a>>{catpos($cat)} </p>
+</div>
+</div>
+<div class="ab_list">
+  <ul class="cl" style="width:1400px;">
+        {wy:content action="category" catid="2" return="datas"}
+        {loop $datas $r}
+        <li>
+            <a href="{$r['url']}">
+                <img src="{IMG_PATH}wycms/icon{$n}.jpg" />
+                <p>{$r[catname]}</p>
+            </a>
+        </li>
+        {/loop}
+        {/wy}
+    </ul>
+</div>
+<div class="ab_con cl">
+    <div class="ab_cont">
+    
+     <div class="ab_tit cl">
+       <h3 id="mao_xswz" class="fl">{$CATEGORYS[$cat]['catname']}</h3>
+      {if $cat==11}
+            <em class="fl">PRIVATE LENDING</em>
+            {elseif $cat==12}
+            <em class="fl">SUPPLY CHAIN FINANCE</em>
+            {elseif $cat==13}
+            <em class="fl">ENTERPRISE PAYMENT COLLECTION</em>
+            {elseif $cat==14}
+            <em class="fl">BANK DEBT COLLECTION</em>
+            {elseif $cat==15}
+            <em class="fl">INTERNATIONAL DEBT COLLECTION</em> 
+            {elseif $cat==16}
+            <em class="fl">ACCUSING THE DEBT COLLECTION</em>
+            {elseif $cat==17}
+            <em class="fl">PERFORM CASE AGENT</em>
+            {elseif $cat==18}
+            <em class="fl">INTERNET FINANCIAL</em>
+            {/if}
+     </div>
+     
+    </div>
+    
+    <div class="list_conb">
+         <ul>
+         {wy:content action="lists" catid="$cat" num="9" moreinfo="true" page="$page" order="inputtime desc" return="data"}
+            {loop $data $r}
+           <li class="{if $n==1 || $n==4 || $n==7}no{/if}">
+            <h3><a href="{$r['url']}" target="_blank">{str_cut(strip_tags($r['title']),'55','...')}</a></h3>
+            <p>{str_cut(strip_tags($r['description']),'120','...')}</p>
+            <div class="about_more cl">
+               <div class="time fl cl">
+                <img class="fl"  src="{IMG_PATH}wycms/time_icon.jpg" />
+                <em class="fl" >{date('y-m-d',$r['inputtime'])}</em>
+              </div>
+              <div class="more fr">
+              
+              <a href="{$r['url']}">More >></a>
+             </div>
+            </div>
+         </li>
+         {/loop}
+         {/wy}
+         </ul>
+         
+         <div class="fanye">
+         {$wy_pages}
+         </div>
+    </div>
+</div>
+{else}
+
+<div class="banner">
+ <div class="ban_hd">
+   <h3>{$CATEGORYS[$catid]['catname']}</h3>
+            {if $catid==9}
+            <em>LAWYERS</em>
+            {elseif $catid==19}
+            <em>COMMON SENSE LENDING</em>
+            {elseif $catid==20}
+            <em>TYPICAL CASE</em>
+            {elseif $catid==21}
+            <em>DEBT COLLECTION GUIDELINES</em>
+            {elseif $catid==22}
+            <em>LEGAL INSTRUMENTS</em>
+            {elseif $catid==23}
+            <em>ACADEMIC JOURNAL</em>
+            {elseif $catid==24}
+            <em>SUCCESSFUL CASES</em>
+            {elseif $catid==25}
+            <em>GOING THROUGH</em>
+            {elseif $catid==26}
+            <em>INDUSTRY NEWS</em>
+            {elseif $catid==27}
+            <em>NEW LAW EXPRESS</em>
+            {elseif $catid==28}
+            <em>HANDLING UNITS</em>
+            {elseif $catid==34}
+            <em>PARTNER</em>
+            {/if}
+   <div class="line"></div>
+ </div>
+ 
+</div>
+<div class="position_bg">
+<div class="position">
+   <p><em><img src="{IMG_PATH}wycms/posi.jpg" /></em>您现在的位置：<a href="/">首页 </a>>{catpos($catid)} </p>
+</div>
+</div>
+
+<div class="{if in_array($catid,array(22,23,24,25))}ca_list{else}ab_list{/if}">
+  <ul class="cl">
+        {if in_array($catid,array(9))}
+        <li><a href="/"><img src="{IMG_PATH}wycms/home.jpg" /><p>首页</p></a></li>
+        <li><a href="{$CATEGORYS[8][url]}"><img src="{IMG_PATH}wycms/shouxi_img.jpg" /><p>首席律师</p></a></li>
+        <li><a href="{$CATEGORYS[1][url]}#mao_jyls"><img src="{IMG_PATH}wycms/team_img.jpg"/><p>精英团队</p></a></li>
+        <li><a href="{$CATEGORYS[10][url]}"><img src="{IMG_PATH}wycms/profile_img.jpg" /><p>律所介绍</p></a></li>
+        {elseif in_array($catid,array(19,20,21))}
+        <li><a href="/"><img src="{IMG_PATH}wycms/home.jpg" /><p>首页</p></a></li>
+        <li><a href="{$CATEGORYS[3][url]}#mao_jdcs"><img src="{IMG_PATH}wycms/know_icon1.jpg" /><p>借贷常识 </p></a></li>
+        <li><a href="{$CATEGORYS[3][url]}#mao_dxal"><img src="{IMG_PATH}wycms/know_icon2.jpg"/><p>典型案例 </p></a></li>
+        <li><a href="{$CATEGORYS[3][url]}#mao_zzzn"><img src="{IMG_PATH}wycms/know_icon3.jpg"/><p>追债指南 </p></a></li>
+        {elseif in_array($catid,array(22,23))}
+        <li><a href="/"><img src="{IMG_PATH}wycms/home.jpg" /><p>首页</p></a></li>
+        <li><a href="{$CATEGORYS[4][url]}#mao_flws"><img src="{IMG_PATH}wycms/book_img.jpg" /><p>法律文书</p></a></li>
+        <li><a href="{$CATEGORYS[4][url]}#mao_xswz"><img src="{IMG_PATH}wycms/book_img1.jpg"/><p>学术文章</p></a></li>
+        {elseif in_array($catid,array(24,25))}
+        <li><a href="/"><img src="{IMG_PATH}wycms/home.jpg" /><p>首页</p></a></li>
+        <li><a href="{$CATEGORYS[5][url]}#mao_cgal"><img src="{IMG_PATH}wycms/case_img1.jpg" /><p>成功案例</p></a></li>
+        <li><a href="{$CATEGORYS[5][url]}#mao_zzbl"><img src="{IMG_PATH}wycms/case_img2.jpg"/><p>正在办理</p></a></li>
+        {elseif in_array($catid,array(26,27,28,34))}
+        <li><a href="/"><img src="{IMG_PATH}wycms/home.jpg" /><p>首页</p></a></li>
+        <li><a href="{$CATEGORYS[6][url]}#mao_yjxw"><img src="{IMG_PATH}wycms/news_icon.jpg" /><p>业界新闻</p></a></li>
+        <li><a href="{$CATEGORYS[6][url]}#mao_xfsd"><img src="{IMG_PATH}wycms/xin_icon.jpg" /><p>新法速递</p></a></li>
+        <li><a href="{$CATEGORYS[6][url]}#mao_badw"><img src="{IMG_PATH}wycms/dan_cion.jpg" /><p>办案单位</p></a></li>
+
+        {/if}
+
+    </ul>
+</div>
+
+
+
+<div class="ab_con cl">
+    <div class="ab_cont">
+    
+     <div class="ab_tit cl">
+       <h3 id="mao_xswz" class="fl">{$CATEGORYS[$catid]['catname']}</h3>
+       
+        {if $catid==9}
+            <em class="fl">LAWYERS</em>
+            {elseif $catid==19}
+            <em class="fl">COMMON SENSE LENDING</em>
+            {elseif $catid==20}
+            <em class="fl">TYPICAL CASE</em>
+            {elseif $catid==21}
+            <em class="fl">DEBT COLLECTION GUIDELINES</em>
+            {elseif $catid==22}
+            <em class="fl">LEGAL INSTRUMENTS</em>
+            {elseif $catid==23}
+            <em class="fl">ACADEMIC JOURNAL</em>
+            {elseif $catid==24}
+            <em class="fl">SUCCESSFUL CASES</em>
+            {elseif $catid==25}
+            <em class="fl">GOING THROUGH</em>
+            {elseif $catid==26}
+            <em class="fl">INDUSTRY NEWS</em>
+            {elseif $catid==27}
+            <em class="fl">NEW LAW EXPRESS</em>
+            {elseif $catid==28}
+            <em class="fl">HANDLING UNITS</em>
+            {elseif $catid==34}
+            <em class="fl">PARTNER</em>
+            {/if}
+     </div>
+     
+    </div>
+    
+    <div class="list_conb">
+         <ul>
+         {wy:content action="lists" catid="$catid" num="9" moreinfo="true" page="$page" order="inputtime desc" return="data"}
+            {loop $data $r}
+           <li class="{if $n==1 || $n==4 || $n==7}no{/if}">
+            <h3><a href="{$r['url']}" target="_blank">{str_cut(strip_tags($r['title']),'55','...')}</a></h3>
+            <p>{str_cut(strip_tags($r['description']),'100','...')}</p>
+            <div class="about_more cl">
+               <div class="time fl cl">
+                <img class="fl"  src="{IMG_PATH}wycms/time_icon.jpg" />
+                <em class="fl" >{date('y-m-d',$r['inputtime'])}</em>
+              </div>
+              <div class="more fr">
+              
+              <a href="{$r['url']}">More >></a>
+             </div>
+            </div>
+         </li>
+         {/loop}
+         {/wy}
+         </ul>
+         
+         <div class="fanye">
+         {$wy_pages}
+         </div>
+    </div>
+</div>
+{/if}
+{template "content","footer"}

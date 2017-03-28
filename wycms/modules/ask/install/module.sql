@@ -1,0 +1,1 @@
+INSERT INTO `wy_module` (`module`, `name`, `url`, `iscore`, `version`, `description`, `setting`, `listorder`, `disabled`, `installdate`, `updatedate`) VALUES ('ask', '咨询', 'ask/', 1, '1.0', '咨询', '', 0, 0, '2014-5-21', '2014-5-21');

@@ -1,0 +1,114 @@
+{template "content","header"}
+<!--banner 开始-->
+<div class="inbanner"><img src="{IMG_PATH}wycms/inbanner.jpg" alt="内蒙古知名律师" /></div>
+<!--banner 结束-->
+
+<div class="space20"></div>
+<div class="space20"></div>
+<div class="main w960">
+	{template "content","left"}
+    <div class="info fr">
+    	<div class="location">您现在的位置是：<a href="{APP_PATH}">网站首页</a>&gt;{catpos($catid)}</div>
+        <div class="infoin">
+			<div class="askmd">
+                <script type="text/javascript">
+            $(function() {
+                var demo = $("#myform").Validform({
+                    tiptype: function(msg, o, cssctl) {
+                        var objtip = $("#msgdemo");
+                        cssctl(objtip, o.type);
+                        objtip.text(msg);
+                    },
+                    ajaxPost: true, //AJAX请求
+                    btnSubmit:"#submitform",
+                    callback: function(data) {        //AJAX请求的回调函数
+                        if (data.status == 'y' && data.info == 'code_error') {
+                            $('#msgdemo').html("<font color='red'>验证码错误</font>");
+                            return false;
+                        } else {
+                            $('#msgdemo').html(" ");
+                            location.href = "{APP_PATH}post_success";
+                        }
+                    }
+                });
+                demo.addRule([
+                    {
+                        ele: "#name",
+                        datatype: "*1-8",
+                        value: "姓名",
+                        tip: "姓名",
+                        nullmsg: "请输入姓名",
+                        errormsg: "姓名在1-8个字符之间"
+                    },
+                    {
+                        ele: "#tel",
+                        datatype: "/^0{0,1}(13[0-9]|15[7-9]|153|156|18[7-9])[0-9]{8}$/",
+                        value: "电话",
+                        tip: "电话",
+                        nullmsg: "请输入手机号码",
+                        errormsg: "手机号码不正确"
+                    },
+                    {
+                        ele: "#introduce",
+                        datatype: "*6-1000",
+                        tip:"咨询内容",
+                        nullmsg: "请输入咨询内容",
+                        errormsg: "咨询内容在6-1000个字之间"
+                    },
+                    {
+                        ele: "#code",
+                        datatype: "/^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]$/",
+                        value: "验证码",
+                        tip: "验证码",
+                        nullmsg: "请输入验证码"                
+                    }
+                ]);
+            });
+        </script>
+				<div class="zixun">
+                   <form action="/ask/" method="post" enctype="application/x-www-form-urlencoded" id="myform">
+                     <p><textarea name="introduce" id="introduce">咨询内容</textarea></p>
+                     <p><input type="text" name="name" id="name" /></p>
+                     <p><input type="text" name="tel" id="tel" /><span>（*联系方式仅律师可见）</span></p>
+                     <p><input type="text" class="yzm" name="code" id="code" />{form::checkcode('code_img','4','14',100,32)}</p>
+                     <div class="askts" id="msgdemo"></div>
+                     <div class="zixun_btn"><input type="submit" id="submitform" value="" class="btn"/></div>
+                   </form>
+                </div>
+			</div>
+			<div class="reply">
+				<div class="reply_tle">
+                    <p>如果您还有疑问，可以直接拨打免费法律咨询电话：<span>{$SITEINFO[mobile]}</span>，陈瑞律师会快速为您解答！</p>
+                    <em></em>
+                </div>
+                <div class="space20"></div>
+            {wy:get sql="select * from wy_guestbook where typeid=0 order by listorder DESC,guestid DESC" page="$page" num="4" siteid="$siteid" order=""}{/wy}
+            {loop $data $v}
+             <div class="reply_in">
+                <div class="wen">
+                    <div class="wen_icon"></div>
+                    <div class="wencont">
+                        <h3><a href="{APP_PATH}ask/detail_{$v[guestid]}.html">{str_cut(strip_tags($v['introduce']),"100","...")}</a></h3>
+                        <!-- <p>{$v[introduce]}</p> -->
+                    </div>
+                </div>                {if $v[reply_content]!=""}
+                <div class="da">
+                    <div class="da_icon"></div>
+                    <div class="dacont">
+                        <div class="daimg fl"><img src="{$CATEGORYS[95]['image']}" alt="内蒙古陈瑞律师" title="内蒙古陈瑞律师" /><br /><a href="{$CATEGORYS[88]['url']}"> 陈瑞律师</a></div>
+                        <div class="datext fr">
+                            <p>
+                            {$v[reply_content]}
+                            </p>
+                            <div class="datime cl">{if $v[reply_content]!=""}回复时间：{date("Y-m-d",$v[replytime])} 回复律师：陈瑞律师 咨询热线：{$SITEINFO[tel]}{/if}</div>
+                        </div>
+                     </div>
+                </div>                {/if}
+             </div>
+             {/loop}
+             <div class="page">{$pages}</div>
+			</div>
+        </div>
+    </div>
+</div>
+<!--main-end-->{template "content","footer"}

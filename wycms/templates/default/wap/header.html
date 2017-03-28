@@ -1,0 +1,20 @@
+{php $info = siteinfo(1);$info = string2array($info['infos']);}
+<!doctype html><head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=3.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="{CSS_PATH}wap/style.css" />
+    <link rel="stylesheet" href="{CSS_PATH}wap/swiper.min.css" />
+    <script src="{JS_PATH}TouchSlide.1.1.js"></script>
+    <script src="{JS_PATH}zepto.js"></script>
+     <script src="{JS_PATH}jquery-1.4.4.min.js"></script>
+    <script src="{JS_PATH}swiper.min.js"></script>
+    <title>{if $catname}{$catname}-{if isset($page)&&$page>1}第{$page}页-{/if}{elseif $title && $_GET['m']!='ask'}{$title}-{if isset($page)&&$page>1}第{$page}页-{/if}{elseif $_GET['m']=='ask' && $_GET[a]=='lists'}在线咨询-{if isset($page)&&$page>1}第{$page}页-{/if}深圳追债网{elseif $_GET['m']=='ask' &&$_GET[a]=='show'}{str_cut($content,90,false)}-深圳追债网{else}深圳债务纠纷律师|深圳经济纠纷律师|深圳债务追讨律师-深圳追债网{/if}{if $catid=="" && $CAT[parentid]==0}{else}深圳追债网{/if}</title> 
+    <meta name="keywords" content="{if $catname&&!isset($id)}{$catname}{elseif $title&&isset($id)}{$rs[keywords]},{$CAT[catname]},{$title}{else}深圳债务纠纷律师,深圳经济纠纷律师,深圳债务追讨律师,深圳追债网{/if}"/>
+    <meta name="description" content="{if $title&&isset($id)}{$rs[description]}{elseif $catid==""&&$_GET[m]=='content'}深圳追债网{$CAT[catname]}栏目为您提供{$CAT[catname]}相关法律知识和内容，如果还需要更多的、专业的{$CAT[catname]}知识，可咨询深圳追债律师李源律师，咨询热线：{$SITEINFO['tel']}{elseif $_GET['m']=='ask' && $_GET[a]=='lists'}在线咨询-深圳追债网{elseif $_GET['m']=='ask' && $_GET[a]=='show'}{$content}{else}深圳追债网是由深圳李源律师创建,擅长民间借贷,债务清收,执行案件代理,互联网金融,供应链金融,债务纠纷等法律事务,咨询热线：{$SITEINFO['tel']}。{/if}"/>
+    
+</head>
+<div class="main">
+    <div class="header rel innhead">
+        <p class="htit">{if $CATEGORYS[$catid]['catname']}{$CATEGORYS[$catid]['catname']}{else}在线咨询{/if}</p>
+        <a href="/" class="h-left abs"><em class="ico_back abs"></em></a>
+    </div>

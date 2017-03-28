@@ -1,0 +1,21 @@
+/* CSS Document */
+body{ background:#2580b4 url(../images/admin_img/login_bg.jpg) center 0 no-repeat;}
+.space10{ height:10px; overflow:hidden; clear:both;}
+.login-wrap{ width:960px; height:440px; overflow:hidden; zoom:1; margin:0 auto; padding:290px 0 0 0}
+.login-cont-l{ float:left; width:280px; height:auto; padding-left:150px; overflow:hidden; zoom:1;}
+.login-cont-l dd{ height:41px; width:280px; margin:0 0 20px;}
+.login-cont-l dd.user, .login-cont-l dd.pwd{ height:42px; width:232px;padding:0 15px; background:url(../images/admin_img/input_box_bg.png) no-repeat; background-position: 0 0;*background-position: 0 1px}
+.login-cont-l dd.user input, .login-cont-l dd.pwd input{ width:232px; height:30px; padding:8px 0 3px; font:500 18px/30px 'Microsoft YaHei'; color:#999; background:none;}
+.login-cont-l dd.v-word{ height:41px; width:247px; padding:0 0 0 15px; background:url(../images/admin_img/vimg_bg.png) no-repeat;}
+.login-cont-l dd.v-word input{ float:left; width:114px; height:30px; padding:8px 0 3px; font:500 18px/30px 'Microsoft YaHei'; color:#999;background:none; }
+.login-cont-l dd.v-word .v-img{ float:right; width:110px; height:41px;}
+.login-cont-l dd.btn{ height:54px; text-align:center;}
+.login-cont-l dd.btn input{ display:inline; cursor:pointer; width:177px; height:54px; background:url(../images/admin_img/login_btn.png) no-repeat;}
+.login-cont-r{ float:right; width:330px; height:auto; padding-right:120px; overflow:hidden; zoom:1;}
+.login-cont-r p{ font:500 14px/24px 'Microsoft YaHei'; color:#fff;}
+.weibo-link{ padding:5px 0 0 0; }
+.weibo-link a{ float:left; width:32px; height:32px; margin-right:10px;}
+.erwei{ width:75px; height:73px; padding:5px 0 0 0;}
+
+.login_copyright{ padding-top:70px;}
+.login_copyright p{ font:500 12px/24px SimSun; color:#fff; text-align:center;}

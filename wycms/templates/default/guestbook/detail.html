@@ -1,0 +1,48 @@
+{template "content","header"}
+<!--banner 开始-->
+<div class="inbanner"><img src="{IMG_PATH}wycms/inbanner.jpg" alt="内蒙古知名律师" /></div>
+<!--banner 结束-->
+
+<div class="space20"></div>
+<div class="space20"></div>
+<div class="main w960">
+	{template "content","left"}
+    <div class="info fr">
+    	<div class="location">您现在的位置是：<a href="{APP_PATH}">网站首页</a>&gt;{catpos($catid)}</div>
+        <div class="infoin">
+			<div class="reply">
+                {wy:get sql="select * from wy_guestbook where guestid=$cid" return="detail"}{/wy}
+                {loop $detail $v}
+                <div class="reply_in">
+                      <div class="wen">
+                          <div class="wen_icon"></div>
+                          <div class="wencont">
+                              <p>{$v[introduce]}</p>
+                          </div>
+                      </div>
+                      <div class="da">
+                          <div class="da_icon"></div>
+                          <div class="dacont">
+                              <div class="daimg fl"><img src="{IMG_PATH}wycms/w65-75.jpg" alt="内蒙古陈瑞律师" title="内蒙古陈瑞律师" /><br /><a href="">陈瑞律师</a></div>
+                              <div class="datext fr">
+                                  {if $v[reply_content]==""}
+                                <font color="#999">律师尚未回复，请您耐心等待</font>
+                                {else}
+                                 <p class="text">{$v[reply_content]}</p>
+                                {/if}
+                                {if $v[reply_content]!=""}
+								   <div class="datime cl">回复律师：<span class="cf00">陈瑞律师</span>咨询热线：<span class="cf00">{$admin_info[$siteid][tel]}</span>   回复时间：{date("Y-m-d",$v[replytime])}</div>
+                              {/if}
+                              </div>
+                           </div>
+                      </div> 
+                 </div>
+                 {/loop}
+                 {/wy}
+                 <div class="space20"></div>
+                 <div class="reply-but"><a href="{$CATEGORYS[95]['url']}">我要咨询</a></div>
+			</div>
+        </div>
+    </div>
+</div>
+<!--main-end-->{template "content","footer"}
